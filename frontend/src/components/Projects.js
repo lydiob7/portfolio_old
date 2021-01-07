@@ -1,10 +1,18 @@
 import React from 'react'
+import styled from 'styled-components'
+
+const ProjectsStyled = styled.div`
+    height: 100vh;
+    width: 100vw;
+    padding: 60px 10vw;
+
+`
 
 const Projects = () => {
     return (
-        <div>
+        <ProjectsStyled id="projects">
             
-        </div>
+        </ProjectsStyled>
     )
 }
 
