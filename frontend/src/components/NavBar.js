@@ -14,7 +14,7 @@ const NavBarStyled = styled.div`
     box-sizing: border-box;
     width: 100vw;
     z-index: 500;
-    background-color: ${props => props.theme.color.main};
+    background-color: black;
     #logo {
         cursor: pointer;
         h2 {
@@ -72,7 +72,7 @@ const NavBar = () => {
     }
 
     const menu = (layout) => (
-    <Menu mode={layout} style={{backgroundColor: '#1E1E1E', borderBottom: 'none'}}>
+    <Menu mode={layout} style={{backgroundColor: 'black', borderBottom: 'none'}}>
         <Menu.Item>
             <HashLink onClick={scrollTop}>Home</HashLink>
         </Menu.Item>

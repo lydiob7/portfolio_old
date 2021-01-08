@@ -5,6 +5,7 @@ const ProjectsStyled = styled.div`
     height: 100vh;
     width: 100vw;
     padding: 60px 10vw;
+    background-color: white;
 
 `
 

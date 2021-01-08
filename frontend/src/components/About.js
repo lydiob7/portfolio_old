@@ -1,14 +1,16 @@
 import React from 'react'
 import Typewriter from 'typewriter-effect';
 import styled from 'styled-components'
+import { Button } from 'antd'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const AboutStyled = styled.div`
     position: relative;
     margin-top: 60px;
-    min-height: calc(100vh - 120px);
+    min-height: calc(100vh - 60px);
     width: 100vw;
     padding-bottom: 60px;
+    background-color: ${props => props.theme.color.main};
     .container-about {
         display: flex;
         flex-direction: column;
@@ -23,7 +25,7 @@ const AboutStyled = styled.div`
             justify-content: center;
             align-items: center;
             width: 100%;
-            padding-top: 80px;
+            padding: 80px 0;
             &>div:first-of-type {
                 max-height: 300px;
                 max-width: 30%;
@@ -42,6 +44,18 @@ const AboutStyled = styled.div`
                     margin: 60px 20px;
                     &:hover {
                         color: ${props => props.theme.color.secondaryLight};
+                    }
+                }
+            }
+            .resume {
+                button {
+                    background-color: ${props => props.theme.color.mainLight};
+                    color: white;
+                    border: none;
+                    height: 45px;
+                    padding: 0 20px;
+                    &:hover {
+                        background-color: ${props => props.theme.color.secondary};
                     }
                 }
             }
@@ -66,8 +80,20 @@ const AboutStyled = styled.div`
                     span {
                         color: white;
                         line-height: 1.32;
+                        &>strong {
+                            color: #569CD6;
+                            font-weight: normal;
+                        }
+                        &>i {
+                            font-style: normal;
+                            color: #49B9F8;
+                        }
+                        &>em {
+                            font-style: normal;
+                            color: #DCDCAA;
+                        }
                         &>span {
-                            color: ${props => props.theme.color.secondaryLight};
+                            color: #DCDCAA;
                         }
                         &>a {
                             color: ${props => props.theme.color.secondaryLight};
@@ -95,12 +121,12 @@ const AboutStyled = styled.div`
 
 const About = () => {
 
-    const textBio = `const name = '<span>Tomas Scattini</span>'<br /> let bio = [<br />"I am a web developer from Argentina with a background in Popular Music from South America.", <br/>
-    "I recently graduated from an intensive bootcamp where I improved my developer skills and reinforced my social network.", <br/> "I find my passion when my creativity is put to test and that's why I deeply enjoy creating new products for the web.",<br/>
+    const textBio = `<strong>const</strong> <i>name</i> = '<span>Tomas Scattini</span>'<br /> <strong>const</strong> <i>bio</i>`
+    const textBio2 = `<strong>let</strong> <i>bio</i> = <span>[</span><br />"I am a web developer from Argentina with a background in Popular Music and a nomad soul.", <br/>
+    "I recently graduated from an intensive bootcamp where I improved my developer skills and reinforced my social network.", <br/> "I love to put my creativity to test and that's why I deeply enjoy creating new products for the web.",<br/>
     "I have worked as a Music teacher in my home country for five years until my urge of adventure made me decide to hit the road and travel around the world.",<br/>
     "That experience made me discover a whole new universe and expanded my perception of life.",<br/>
-    "Today I decide to make a positive change in the world wherever I can, and that is mostly through this powerful tool that is the internet.",<br/>
-    "I work with HTML, CSS, JavaScript, React, NodeJS, Express, MongoDB, Git and GitHub.",<br/>]<br/> function links() {<br/> const Linkedin = <a href="https://www.linkedin.com/in/tomas-scattini/">linkedin.com/in/tomas-scattini/</a><br/> const GitHub = <a href="https://github.com/Tomasscattini">github.com/Tomasscattini</a> <br/>}`
+    "Today I decide to make a positive change in the world wherever I can, and that is mostly through this powerful tool that is the internet."<br/><span>]</span><br/> <i>function</i> <em>links()</em> <span>{</span><br/> const Linkedin = <a href="https://www.linkedin.com/in/tomas-scattini/">linkedin.com/in/tomas-scattini/</a><br/> const GitHub = <a href="https://github.com/Tomasscattini">github.com/Tomasscattini</a> <br/><span>}</span>`
     
     return (
         <AboutStyled id="about">
@@ -117,17 +143,21 @@ const About = () => {
                             <FontAwesomeIcon icon={["fab", "linkedin"]} className="icon"/>
                         </a>
                     </div>
+                    <div className="resume">
+                        <a href="/resume.pdf" download="Resume Tomas Scattini"><Button primary>Download Resume</Button></a>
+                    </div>
                 </div>
 
                 <div className="bio">
                     <div className='content'>
                         <Typewriter
-                            options={{delay: 4}}
+                            options={{delay: 75}}
                             onInit={(typewriter) => {
-                                typewriter.delay = '25'
                                 typewriter.typeString(textBio)
-                                .pauseFor(2500)
-                                .typeString()
+                                .pauseFor(1000)
+                                .deleteChars(9)
+                                .changeDelay(15)
+                                .typeString(textBio2)
                                 .start();
                             }}
                         />

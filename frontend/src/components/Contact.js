@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Typography, Form, Input, Button, Row, Col } from 'antd'
 import styled from 'styled-components'
+import { contactFn } from '../services/contact'
 
 const ContactStyled = styled.div`
     padding: 60px 0;
-    h3 {
+    background-color: black;    
+    h3, h4 {
         color: white;
         text-align: center;
     }
@@ -12,21 +14,35 @@ const ContactStyled = styled.div`
         label {
             color: white;
         }
+        input, textarea {
+            color: white;
+            background-color: transparent;
+            border: 2px solid ${props => props.theme.color.mainLight};
+        }
+    }
+    button {
+        width: 100%;
+        background-color: ${props => props.theme.color.main};
+        color: white;
+        border: none;
+        &:hover {
+            background-color: ${props => props.theme.color.secondary};
+        }
+    }
+    .message-sent {
+        height: 425.2px;
         button {
-            width: 100%;
-            background-color: ${props => props.theme.color.main};
-            border: none;
-            &:hover {
-                background-color: ${props => props.theme.color.secondary};
-            }
+            margin-top: 50px;
         }
     }
 `
 
 const Contact = () => {
+    const [ messageSent, setMessageSent ] = useState(null)
 
     const onFinish = (values) => {
-        console.log('Success:', values);
+        contactFn(values);
+        setMessageSent(true)
     };
     
     const onFinishFailed = (errorInfo) => {
@@ -36,9 +52,11 @@ const Contact = () => {
     return (
         <ContactStyled id="contact">
             <Row>
-                <Col span={24}>
+            {!messageSent ?
+                <><Col span={24}>
                     <Typography.Title level={3} >Get in touch</Typography.Title>
                 </Col>
+
                 <Col xs={{offset: 2, span: 20}} md={{offset: 4, span: 16}} lg={{offset: 8, span: 8}}>
 
                     <Form
@@ -81,7 +99,19 @@ const Contact = () => {
                         </Form.Item>
                         </Form>
 
-                </Col>
+                </Col></> : <Col className="message-sent" xs={{offset: 2, span: 20}} md={{offset: 4, span: 16}}>
+                    <Row>
+                        <Col span={24}>
+                            <Typography.Title level={3}>Thanks for contacting!</Typography.Title>
+                            <Typography.Title level={4}>I'll be getting back to you shortly</Typography.Title>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col xs={{span: 24}} sm={{offset: 4, span: 16}} lg={{offset: 8, span: 8}}>
+                            <Button onClick={()=> setMessageSent(null)}>Get in touch again!</Button>
+                        </Col>
+                    </Row>
+                </Col>}
             </Row>
         </ContactStyled>
     )

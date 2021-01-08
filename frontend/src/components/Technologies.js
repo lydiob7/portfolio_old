@@ -9,6 +9,7 @@ const TechnologiesStyled = styled.div`
     min-height: 500px;
     width: 100vw;
     padding: 120px 10vw;
+    background-color: ${props => props.theme.color.mainLight};
     img {
         object-fit: scale-down;
     }
@@ -72,13 +73,13 @@ const Technologies = () => {
 
     useEffect(() => {
         window.onscroll = () => {
-            if(window.scrollY > 420 && window.scrollY < 1050) {
+            if(window.scrollY > 1320 && window.scrollY < 1940) {
                 setVisible2('1')
             } 
-            if(window.scrollY > 320 && window.scrollY < 950) {
+            if(window.scrollY > 1220 && window.scrollY < 1840) {
                 setVisible1('1')
             }
-            if (window.scrollY < 320 || window.scrollY > 1050) {
+            if (window.scrollY < 1220 || window.scrollY > 1840) {
                 setVisible1('0')
                 setVisible2('0')
             }

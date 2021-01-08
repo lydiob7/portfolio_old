@@ -9,7 +9,7 @@ html {
 body {
     position: relative;
     overflow-x: hidden;
-    background-color: ${props => props.theme.color.mainLight};
+    font-family: 'Montserrat', sans-serif;
     width: 100vw;
     -ms-overflow-style: none;
     scrollbar-width: none;

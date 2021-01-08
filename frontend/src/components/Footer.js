@@ -8,7 +8,7 @@ const FooterStyled = styled.div`
     flex-direction: column-reverse;
     align-items: center;
     justify-content: space-evenly;
-    background-color: ${props => props.theme.color.main};
+    background-color: black;
     height: 120px;
     width: 100vw;
     position: relative;
