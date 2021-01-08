@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -6,7 +6,7 @@ const TechnologiesStyled = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    min-height: 500px;
+    min-height: 100vh;
     width: 100vw;
     padding: 120px 10vw;
     background-color: ${props => props.theme.color.mainLight};
@@ -70,18 +70,27 @@ const TechnologiesStyled = styled.div`
 const Technologies = () => {
     const [ visible1, setVisible1 ] = useState('0')
     const [ visible2, setVisible2 ] = useState('0')
+    const $componentTech = useRef()
 
     useEffect(() => {
-        window.onscroll = () => {
-            if(window.scrollY > 1320 && window.scrollY < 1940) {
-                setVisible2('1')
-            } 
-            if(window.scrollY > 1220 && window.scrollY < 1840) {
-                setVisible1('1')
-            }
-            if (window.scrollY < 1220 || window.scrollY > 1840) {
-                setVisible1('0')
-                setVisible2('0')
+        if (typeof window !== "undefined") {
+            window.onscroll = () => {
+                if ($componentTech) { 
+                    const winY = window.scrollY
+                    const winH = window.innerHeight - 50
+                    const compY = $componentTech.current.getBoundingClientRect().top + winH
+                    const compH = $componentTech.current.getBoundingClientRect().height
+                    if(winY > (compY + 100) && winY < (compY + compH + 1000)) {
+                        setVisible2('1')
+                    } 
+                    if(winY > compY && winY < (compY + compH + 900)) {
+                        setVisible1('1')
+                    }
+                    if (winY < compY || winY > (compY + compH + 900)) {
+                        setVisible1('0')
+                        setVisible2('0')
+                    }
+                }
             }
         }
         return () => {
@@ -90,7 +99,7 @@ const Technologies = () => {
     })
 
     return (
-        <TechnologiesStyled id="technologies">
+        <TechnologiesStyled  id="technologies" ref={$componentTech}>
             <FontAwesomeIcon icon={["fab", "react"]} style={{opacity: visible1}} className="icon react"/>
             <FontAwesomeIcon icon={["fab", "node"]} style={{opacity: visible1}} className="icon node"/>
             <img src="/expressjs.svg" style={{opacity: visible1}} className="icon express" alt="ExpressJs" />

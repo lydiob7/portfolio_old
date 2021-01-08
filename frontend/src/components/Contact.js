@@ -4,8 +4,9 @@ import styled from 'styled-components'
 import { contactFn } from '../services/contact'
 
 const ContactStyled = styled.div`
-    padding: 60px 0;
-    background-color: black;    
+    padding: 150px 0;
+    background-color: black;
+    height: calc(100vh - 60px);    
     h3, h4 {
         color: white;
         text-align: center;
