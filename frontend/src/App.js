@@ -7,6 +7,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 import GlobalStyle from './components/GlobalStyle'
 import Theme from './components/Theme'
 import About from './components/About'
+import Banner from './components/Banner'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import HeaderSection from './components/HeaderSection'
@@ -24,6 +25,7 @@ function App() {
         <GlobalStyle />
         <NavBar />
         <HeaderSection />
+        <Banner />
         <About />
         <Technologies />
         <Projects />
