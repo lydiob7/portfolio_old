@@ -74,26 +74,26 @@ const NavBar = () => {
     const menu = (layout) => (
     <Menu mode={layout} style={{backgroundColor: 'black', borderBottom: 'none'}}>
         <Menu.Item>
-            <HashLink onClick={scrollTop}>Home</HashLink>
+            <HashLink onClick={scrollTop}>#Home</HashLink>
         </Menu.Item>
         <Menu.Item>
-            <HashLink to='/#about'>About</HashLink>
+            <HashLink to='/#about'>#About</HashLink>
         </Menu.Item>
         <Menu.Item>
-            <HashLink to='/#technologies'>Technologies</HashLink>
+            <HashLink to='/#technologies'>#Technologies</HashLink>
         </Menu.Item>
         <Menu.Item>
-            <HashLink to='/#projects'>Projects</HashLink>
+            <HashLink to='/#projects'>#Projects</HashLink>
         </Menu.Item>
         <Menu.Item>
-            <HashLink to='/#contact'>Contact</HashLink>
+            <HashLink to='/#contact'>#Contact</HashLink>
         </Menu.Item>
     </Menu>)
 
     return (
         <NavBarStyled>
             <div id="logo" onClick={scrollTop}>
-                <Typography.Title level={2}>TomiScattini</Typography.Title>
+                <Typography.Title level={2}>&lt;TomiScattini /&gt;</Typography.Title>
             </div>
 
             <div id="menu-mobile">

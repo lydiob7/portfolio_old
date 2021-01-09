@@ -62,7 +62,7 @@ const ProjectsStyled = styled.div`
                 a {
                     img {
                         height: auto;
-                        width: 100%;
+                        width: 85%;
                     }
                 }
             }

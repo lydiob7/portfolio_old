@@ -55,7 +55,7 @@ const Contact = () => {
             <Row>
             {!messageSent ?
                 <><Col span={24}>
-                    <Typography.Title level={3} >Get in touch</Typography.Title>
+                    <Typography.Title level={3} >{"{ { Get in touch } }"}</Typography.Title>
                 </Col>
 
                 <Col xs={{offset: 2, span: 20}} md={{offset: 4, span: 16}} lg={{offset: 8, span: 8}}>
@@ -103,7 +103,7 @@ const Contact = () => {
                 </Col></> : <Col className="message-sent" xs={{offset: 2, span: 20}} md={{offset: 4, span: 16}}>
                     <Row>
                         <Col span={24}>
-                            <Typography.Title level={3}>Thanks for contacting!</Typography.Title>
+                            <Typography.Title level={3}>{"{ { Thanks for contacting! } }"}</Typography.Title>
                             <Typography.Title level={4}>I'll be getting back to you shortly</Typography.Title>
                         </Col>
                     </Row>

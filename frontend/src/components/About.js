@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react'
 import Typewriter from 'typewriter-effect';
 import styled from 'styled-components'
-import { Button } from 'antd'
+import { Button, Menu } from 'antd'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const AboutStyled = styled.div`
@@ -81,23 +81,29 @@ const AboutStyled = styled.div`
                         color: white;
                         font-size: 14px;
                         font-family: 'Courier Prime', monospace;
-                        &>strong {
+                        strong {
                             color: #569CD6;
                             font-weight: normal;
                         }
-                        &>i {
+                        i {
                             font-style: normal;
                             color: #49B9F8;
                         }
-                        &>em {
+                        em {
                             font-style: normal;
                             color: #DCDCAA;
                         }
                         &>div {
                             margin-left: 20px;
                         }
-                        &>a {
-                            color: ${props => props.theme.color.secondaryLight};
+                        &>span {
+                            font-family: sans-serif;
+                        }
+                        a {
+                            color: white;
+                            &:hover {
+                                color: ${props => props.theme.color.secondaryLight};
+                            }
                         }
                     }
             }
@@ -122,24 +128,12 @@ const AboutStyled = styled.div`
 
 const About = () => {
     const [ language, setLanguage ] = useState('js')
-    const [ visible, setVisible ] = useState('js')
-
-    const $componentTypewriter = useRef(null)
+    const [ start, setStart ] = useState(null)
+    const $typewriter = useRef(null)
 
     useEffect(() => {
-        if (typeof window !== "undefined") {
-            window.onscroll = () => {
-                let $typewriterY = $componentTypewriter.current.getBoundingClientRect().top - window.innerHeight;
-                let $typewriterH = $componentTypewriter.current.getBoundingClientRect().height
-                
-                if ($typewriterY < -150 && $typewriterY > (-150 - $typewriterH)) {
-                  setVisible("1")
-                } else {
-                  setVisible("0")
-                }
-              }
-        }
-    })
+        if(language) setStart(true)
+    }, [language])
 
     const txt1 = `<em>Tomas Scattini</em>`
     const txt2 = `I am a web developer from Argentina with a background in Popular Music and a nomad soul.`
@@ -147,15 +141,25 @@ const About = () => {
     const txt4 = `I love to put my creativity to test and that's why I deeply enjoy creating new products for the web.`
     const txt5 = `I have worked as a Music teacher in my home country for five years until my urge of adventure made me decide to hit the road and travel around the world.`
     const txt6 = `That experience made me discover a whole new universe and expanded my perception of life.`
-    const txt7 = ` Today I decide to make a positive change in the world wherever I can, and that is mostly through this powerful tool that is the internet.`
+    const txt7 = `Today I decide to make a positive change in the world wherever I can, and that is mostly through this powerful tool that is the internet.`
     const txtLkdn = `linkedin.com/in/tomas-scattini/`
     const txtGthb = `github.com/Tomasscattini`
 
     const bioJs = `<strong>const</strong> <i>name</i> = "${txt1}"<br /> <strong>const</strong> <i>bio</i>`
-    const bioJs2 = `<strong>let</strong> <i>bio</i> = <em>[</em><br /><div>"${txt2}", <br/>"${txt3}", <br/> "${txt4}",<br/>"${txt5}",<br/>"${txt6}",<br/>"${txt7}"</div><br/><em>]</em><br/> <i>function</i> <em>links()</em> <em>{</em><br/> <div>const Linkedin = <a href="https://www.${txtLkdn}">${txtLkdn}</a><br/>const GitHub = <a href="https://${txtGthb}">${txtGthb}</a></div> <br/><em>}</em>`
+    const bioJs2 = `<strong>let</strong> <i>bio</i> = <em>[</em><br /><div>"${txt2}", <br/>"${txt3}", <br/> "${txt4}",<br/>"${txt5}",<br/>"${txt6}",<br/>"${txt7}"</div><br/><em>]</em><br/> <i>function</i> <em>profSocialMedia()</em> <em>{</em><br/> <div><strong>const</strong> <i>linkedIn</i> = <a href="https://www.${txtLkdn}">${txtLkdn}</a><br/><strong>const</strong> <i>gitHub</i> = <a href="https://${txtGthb}">${txtGthb}</a><br/><strong>return</strong> clicked</div> <br/><em>}</em>`
 
-    const bioPhp = ``
-    const bioPhp2 = ``
+    const bioTs = `<strong>const</strong> <i>name: string</i> = "${txt1}"<br /> <strong>const</strong> <i>bio: string[]</i>`
+    const bioTs2 = `<strong>let</strong> <i>bio: any[]</i> = <em>[</em><br /><div>"${txt2}", <br/>"${txt3}", <br/> "${txt4}",<br/>"${txt5}",<br/>"${txt6}",<br/>"${txt7}"</div><br/><em>]</em><br/> <i>function</i> <em>profSocialMedia(): link</em> <em>{</em><br/> <div><strong>const: string</strong> <i>linkedIn: string</i> = <a href="https://www.${txtLkdn}">${txtLkdn}</a><br/><strong>const: string</strong> <i>gitHub: string</i> = <a href="https://${txtGthb}">${txtGthb}</a><br/><strong>return</strong> clicked</div> <br/><em>}</em>`
+
+    const bioPy = `<i>name: str</i> = <i>full_name: str</i> = <i>alias: str</i> = "${txt1}"<br /><i>bio: list[str]</i>`
+    const bioPy2 = `<i>any]</i> = <em>[</em><br /><div>"${txt2}", <br/>"${txt3}", <br/> "${txt4}",<br/>"${txt5}",<br/>"${txt6}",<br/>"${txt7}"</div><br/><em>]</em><br/> <i>def</i> <em>prof_social_media() -<span>></span> links:</em><br/> <div><i>linked_in</i> = <a href="https://www.${txtLkdn}">${txtLkdn}</a><br/><i>git_hub</i> = <a href="https://${txtGthb}">${txtGthb}</a><br/><strong>return</strong> clicked;</div> <br/>`
+
+    const changeLanguage = (lg) => {
+        if (lg !== language){
+            setStart(null)
+            setLanguage(lg)
+        }
+    }
     
     return (
         <AboutStyled id="about">
@@ -177,21 +181,41 @@ const About = () => {
                     </div>
                 </div>
 
-                <div className="bio" ref={$componentTypewriter}>
+                <div className="bio">
+                    <Menu mode="horizontal" style={{backgroundColor: '#1E1E1E', color: "white", borderBottom: 'none', marginBottom: "10px"}}>
+                        <Menu.Item style={{margin: '15px'}} onClick={() => changeLanguage('js')}>
+                            <span>JavaScript</span>
+                        </Menu.Item>
+                        <Menu.Item style={{margin: '15px'}} onClick={() => changeLanguage('ts')}>
+                            <span>TypeScript</span>
+                        </Menu.Item>
+                        <Menu.Item style={{margin: '15px'}} onClick={() => changeLanguage('py')}>
+                            <span>Python</span>
+                        </Menu.Item>
+                    </Menu>
                     <div className='content'>
-                        <Typewriter
+                        {start && <Typewriter
+                            ref={$typewriter}
                             options={{delay: 75, skipAddStyles: true}}
                             onInit={(typewriter) => {
                                 let bioText 
                                 let bioText2
+                                let n
                                 switch (language) {
                                     case 'js':
                                         bioText = bioJs
                                         bioText2 = bioJs2
+                                        n = '9'
                                         break
-                                    case 'php':
-                                        bioText = bioPhp
-                                        bioText2 = bioPhp2
+                                    case 'ts':
+                                        bioText = bioTs
+                                        bioText2 = bioTs2
+                                        n = '19'
+                                        break
+                                    case 'py':
+                                        bioText = bioPy
+                                        bioText2 = bioPy2
+                                        n = '4'
                                         break
                                     default:
                                         bioText = bioJs
@@ -200,12 +224,12 @@ const About = () => {
                                 }
                                 typewriter.typeString(bioText)
                                 .pauseFor(1000)
-                                .deleteChars(9)
+                                .deleteChars(n)
                                 .changeDelay(15)
                                 .typeString(bioText2)
                                 .start();
                             }}
-                        />
+                        />}
                     </div>
                 </div>
             </div>
