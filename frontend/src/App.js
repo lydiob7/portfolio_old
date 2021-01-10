@@ -1,24 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import { BrowserRouter as Router } from 'react-router-dom'
+import 'antd/dist/antd.css'
+import { Switch } from 'antd'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+
+import GlobalStyle from './components/GlobalStyle'
+import Theme from './components/Theme'
+import About from './components/About'
+import Contact from './components/Contact'
+import Footer from './components/Footer'
+import HeaderSection from './components/HeaderSection'
+import NavBar from './components/NavBar'
+import Projects from './components/Projects'
+import Technologies from './components/Technologies'
+
+library.add(fab)
 
 function App() {
+  const [colorTheme, setColorTheme] = useState('light')
+
+  const changeTheme = (checked) => {
+    switch(colorTheme) {
+      case 'dark':
+        setColorTheme('light')
+        break
+      case 'light':
+        setColorTheme('dark')
+        break
+      default: 
+        break
+    }
+    
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Theme color={colorTheme}>
+        <GlobalStyle />
+        <NavBar />
+        <Switch id="switch"  onChange={changeTheme} data-toggle="tooltip" data-placement="left" title="Light/Dark"/>
+        <HeaderSection />
+        <About />
+        <Technologies />
+        <Projects />
+        <Contact />
+        <Footer />
+      </Theme>
+    </Router>
   );
 }
 
