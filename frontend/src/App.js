@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { BrowserRouter as Router } from 'react-router-dom'
 import 'antd/dist/antd.css'
+import { Switch } from 'antd'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 
@@ -17,12 +18,28 @@ import Technologies from './components/Technologies'
 library.add(fab)
 
 function App() {
+  const [colorTheme, setColorTheme] = useState('dark')
+
+  const changeTheme = (checked) => {
+    switch(colorTheme) {
+      case 'dark':
+        setColorTheme('light')
+        break
+      case 'light':
+        setColorTheme('dark')
+        break
+      default: 
+        break
+    }
+    
+  }
 
   return (
     <Router>
-      <Theme>
+      <Theme color={colorTheme}>
         <GlobalStyle />
         <NavBar />
+        <Switch id="switch"  onChange={changeTheme} data-toggle="tooltip" data-placement="left" title="Light/Dark"/>
         <HeaderSection />
         <About />
         <Technologies />

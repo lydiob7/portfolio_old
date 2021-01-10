@@ -8,18 +8,18 @@ const FooterStyled = styled.div`
     flex-direction: column-reverse;
     align-items: center;
     justify-content: space-evenly;
-    background-color: black;
+    background-color: ${props => props.theme.color.tertiary};
     height: 120px;
     width: 100vw;
     position: relative;
     bottom: 0;
     padding: 0 10vw;
     p {
-        color: white;
+        color: ${props => props.theme.font.color};
     }
     .social {
         .icon {
-            color: white;
+            color: ${props => props.theme.font.color};
             height: 20px;
             width: auto;
             margin: 0 10px;

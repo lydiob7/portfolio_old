@@ -14,30 +14,28 @@ const NavBarStyled = styled.div`
     box-sizing: border-box;
     width: 100vw;
     z-index: 500;
-    background-color: black;
+    background-color: ${props => props.theme.color.tertiary};
     #logo {
         cursor: pointer;
         h2 {
             margin: 0;
-            color: white;
+            color: ${props => props.theme.font.color};
             &:hover {
                 color: ${props => props.theme.color.secondary};
             }
         }
-    }
-    a {
-        color: white;
     }
     #menu-mobile {
         div {
             display: block;
             width: 50px;
             z-index: 20;
+            cursor: pointer;
             span {
                 height: 2px;
                 width: 30px;
                 margin: 6px auto;
-                background-color: white;
+                background-color: ${props => props.theme.font.color};
                 text-align: center;
                 display: block;
                 border-radius: 20%;
@@ -47,7 +45,7 @@ const NavBarStyled = styled.div`
     #menu-lg {
         display: none;
     }
-    @media ${props => props.theme.device.tablet} {
+    @media (min-width: 850px) {
         #menu-mobile {
             div {
                 display: none;
@@ -55,8 +53,22 @@ const NavBarStyled = styled.div`
         }
         #menu-lg {
             display: block;
+            .ant-menu {
+                background-color: ${props => props.theme.color.tertiary}; 
+                border-bottom: none;
+            }
+            .ant-menu-item {
+                margin: 0 10px;
+            }
             a {
-                color: white;
+                color: ${props => props.theme.font.color};
+            }
+        }
+    }
+    @media ${props => props.theme.device.laptop} {
+        #menu-lg {
+            .ant-menu-item {
+                margin: 0 20px;
             }
         }
     }
@@ -72,28 +84,28 @@ const NavBar = () => {
     }
 
     const menu = (layout) => (
-    <Menu mode={layout} style={{backgroundColor: 'black', borderBottom: 'none'}}>
+    <Menu mode={layout}>
         <Menu.Item>
-            <HashLink onClick={scrollTop}>#Home</HashLink>
+            <HashLink onClick={scrollTop}>Home</HashLink>
         </Menu.Item>
         <Menu.Item>
-            <HashLink to='/#about'>#About</HashLink>
+            <HashLink to='/#about'>About</HashLink>
         </Menu.Item>
         <Menu.Item>
-            <HashLink to='/#technologies'>#Technologies</HashLink>
+            <HashLink to='/#technologies'>Technologies</HashLink>
         </Menu.Item>
         <Menu.Item>
-            <HashLink to='/#projects'>#Projects</HashLink>
+            <HashLink to='/#projects'>Projects</HashLink>
         </Menu.Item>
         <Menu.Item>
-            <HashLink to='/#contact'>#Contact</HashLink>
+            <HashLink to='/#contact'>Contact</HashLink>
         </Menu.Item>
     </Menu>)
 
     return (
         <NavBarStyled>
             <div id="logo" onClick={scrollTop}>
-                <Typography.Title level={2}>&lt;TomiScattini /&gt;</Typography.Title>
+                <Typography.Title level={2}>Tomi Scattini</Typography.Title>
             </div>
 
             <div id="menu-mobile">

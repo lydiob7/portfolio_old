@@ -5,29 +5,31 @@ import { contactFn } from '../services/contact'
 
 const ContactStyled = styled.div`
     padding: 150px 0;
-    background-color: black;
+    background-color: ${props => props.theme.color.tertiary};
     height: calc(100vh - 60px);    
-    h3, h4 {
-        color: white;
+    h2, h4 {
+        color: ${props => props.theme.font.color};
         text-align: center;
+        font-weight: normal;
     }
     .form {
         label {
-            color: white;
+            color: ${props => props.theme.font.color};
         }
         input, textarea {
-            color: white;
+            color: ${props => props.theme.font.color};
             background-color: transparent;
-            border: 2px solid ${props => props.theme.color.mainLight};
+            border: 2px solid gray;
         }
     }
     button {
         width: 100%;
         background-color: ${props => props.theme.color.main};
-        color: white;
-        border: none;
+        color: ${props => props.theme.font.color};
+        border: 1px solid #383838;
         &:hover {
             background-color: ${props => props.theme.color.secondary};
+            color: white;
         }
     }
     .message-sent {
@@ -55,7 +57,7 @@ const Contact = () => {
             <Row>
             {!messageSent ?
                 <><Col span={24}>
-                    <Typography.Title level={3} >{"{ { Get in touch } }"}</Typography.Title>
+                    <Typography.Title level={2} >Get in touch</Typography.Title>
                 </Col>
 
                 <Col xs={{offset: 2, span: 20}} md={{offset: 4, span: 16}} lg={{offset: 8, span: 8}}>
@@ -103,7 +105,7 @@ const Contact = () => {
                 </Col></> : <Col className="message-sent" xs={{offset: 2, span: 20}} md={{offset: 4, span: 16}}>
                     <Row>
                         <Col span={24}>
-                            <Typography.Title level={3}>{"{ { Thanks for contacting! } }"}</Typography.Title>
+                            <Typography.Title level={2}>Thanks for contacting! </Typography.Title>
                             <Typography.Title level={4}>I'll be getting back to you shortly</Typography.Title>
                         </Col>
                     </Row>

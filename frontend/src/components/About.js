@@ -8,8 +8,13 @@ const AboutStyled = styled.div`
     position: relative;
     min-height: 100vh;
     width: 100vw;
-    padding: 60px 0;
+    padding: 120px 0 60px 0;
     background-color: ${props => props.theme.color.main};
+    &>h2 {
+        text-align: center;
+        color: ${props=>props.theme.font.color};
+        font-size: 30px;
+    }
     .container-about {
         display: flex;
         flex-direction: column;
@@ -19,25 +24,14 @@ const AboutStyled = styled.div`
         min-height: 100vh;
         z-index: 5;
         .photo{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
             width: 100%;
             padding: 80px 0;
-            &>div:first-of-type {
-                max-height: 300px;
-                max-width: 30%;
-                overflow: hidden;
-                img {
-                    height: auto;
-                    width: 100%;
-                    object-fit: cover;
-                }
-            }
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             .social {
                 .icon {
-                    color: white;
+                    color: ${props => props.theme.font.color};
                     height: 50px;
                     width: auto;
                     margin: 60px 20px;
@@ -49,12 +43,13 @@ const AboutStyled = styled.div`
             .resume {
                 button {
                     background-color: ${props => props.theme.color.mainLight};
-                    color: white;
-                    border: none;
+                    color: ${props => props.theme.font.color};
+                    border: 1px solid #383838;
                     height: 45px;
                     padding: 0 20px;
                     &:hover {
                         background-color: ${props => props.theme.color.secondary};
+                        color: white;
                     }
                 }
             }
@@ -62,11 +57,17 @@ const AboutStyled = styled.div`
         .bio {
             width: 100%;
             padding: 0 10vw;
+            .ant-menu {
+                background-color: ${props => props.theme.color.main}!important;
+                li {
+                    color: ${props => props.theme.font.color}!important;
+                }
+            }
             .content {
                     width: 80vw;
                     height: 500px;
                     padding: 0 40px 60px 60px;
-                    background-image: url("https://res.cloudinary.com/tomiscattini/image/upload/v1609976839/Portfolio/background-vsc_nbsysf.png");
+                    background-image: url(${props=>props.theme.bioImg});
                     background-size: cover;
                     background-position: left center;
                     background-repeat: no-repeat;
@@ -78,7 +79,7 @@ const AboutStyled = styled.div`
                         display: none;
                     }
                     span {
-                        color: white;
+                        color: ${props => props.theme.font.color};
                         font-size: 14px;
                         font-family: 'Courier Prime', monospace;
                         strong {
@@ -100,7 +101,7 @@ const AboutStyled = styled.div`
                             font-family: sans-serif;
                         }
                         a {
-                            color: white;
+                            color: ${props => props.theme.font.color};
                             &:hover {
                                 color: ${props => props.theme.color.secondaryLight};
                             }
@@ -111,13 +112,15 @@ const AboutStyled = styled.div`
     }
     @media ${props => props.theme.device.laptop} {
         .container-about {
-            flex-direction: row;
+            flex-direction: row-reverse;
+            align-items: flex-start;
             .photo {
                 width: 40%;
+                padding: 10vw;
             }
             .bio {
                 width: 60%;
-                padding: 0 10vw 0 0;
+                padding: 0 0 0 10vw;
                 .content {
                     width: 100%;
                 }
@@ -135,7 +138,7 @@ const About = () => {
         if(language) setStart(true)
     }, [language])
 
-    const txt1 = `<em>Tomas Scattini</em>`
+    const txt1 = `Tomas Scattini`
     const txt2 = `I am a web developer from Argentina with a background in Popular Music and a nomad soul.`
     const txt3 = `I recently graduated from an intensive bootcamp where I improved my developer skills and reinforced my social network.`
     const txt4 = `I love to put my creativity to test and that's why I deeply enjoy creating new products for the web.`
@@ -163,11 +166,14 @@ const About = () => {
     
     return (
         <AboutStyled id="about">
+
+            <h2>About me</h2>
+
             <div className="container-about">
                 <div className="photo">
-                    <div>
+                    {/* <div>
                         <img src="https://res.cloudinary.com/tomiscattini/image/upload/v1609991109/Portfolio/Foto_perfil_vlsfyy.jpg" alt="Profile" />
-                    </div>
+                    </div> */}
                     <div className="social">
                         <a  rel="noreferrer" target="_blank" href="https://github.com/Tomasscattini">
                             <FontAwesomeIcon icon={["fab", "github"]} className="icon"/>
