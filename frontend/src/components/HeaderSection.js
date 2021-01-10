@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Typography, Row, Col } from 'antd'
+import { Typography } from 'antd'
 
 const HeaderStyled = styled.div`
     display: flex;
@@ -54,7 +54,7 @@ const HeaderStyled = styled.div`
 const HeaderSection = () => {
     return (
         <HeaderStyled>
-            <img src="https://res.cloudinary.com/tomiscattini/image/upload/v1610311528/Portfolio/IMG_69478_vbwzk5.jpg" />
+            <img src="https://res.cloudinary.com/tomiscattini/image/upload/v1610311528/Portfolio/IMG_69478_vbwzk5.jpg" alt="Tomi Scattini" />
             <Typography.Title level={2}>Hello, I am</Typography.Title>
             <Typography.Title level={1}>Tomi Scattini</Typography.Title>
             <Typography.Title level={2}>Web Developer</Typography.Title>

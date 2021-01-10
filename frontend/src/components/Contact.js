@@ -4,13 +4,11 @@ import styled from 'styled-components'
 import { contactFn } from '../services/contact'
 
 const ContactStyled = styled.div`
-    padding: 150px 0;
-    background-color: ${props => props.theme.color.tertiary};
-    height: calc(100vh - 60px);    
+    padding: 50px 0;
+    background-color: ${props => props.theme.color.tertiary};    
     h2, h4 {
         color: ${props => props.theme.font.color};
         text-align: center;
-        font-weight: normal;
     }
     .form {
         label {
@@ -38,6 +36,10 @@ const ContactStyled = styled.div`
             margin-top: 50px;
         }
     }
+    @media ${props => props.theme.device.tablet} {
+        min-height: calc(100vh - 60px);
+        padding: 150px 0;
+    }
 `
 
 const Contact = () => {
@@ -57,7 +59,7 @@ const Contact = () => {
             <Row>
             {!messageSent ?
                 <><Col span={24}>
-                    <Typography.Title level={2} >Get in touch</Typography.Title>
+                    <Typography.Title className="section-title" level={2} >Get in touch</Typography.Title>
                 </Col>
 
                 <Col xs={{offset: 2, span: 20}} md={{offset: 4, span: 16}} lg={{offset: 8, span: 8}}>

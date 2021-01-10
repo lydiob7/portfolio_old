@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import { BrowserRouter as Router } from 'react-router-dom'
 import 'antd/dist/antd.css'
 import { Switch } from 'antd'
@@ -18,7 +18,7 @@ import Technologies from './components/Technologies'
 library.add(fab)
 
 function App() {
-  const [colorTheme, setColorTheme] = useState('dark')
+  const [colorTheme, setColorTheme] = useState('light')
 
   const changeTheme = (checked) => {
     switch(colorTheme) {

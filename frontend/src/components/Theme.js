@@ -6,8 +6,8 @@ const Theme = ( { children, color } ) => {
         color: {
             main: '#1E1E1E',
             mainLight: '#383838',
-            secondary: '#6832a8',   
-            secondaryLight: '#9a48fa',
+            secondary: 'white',   
+            secondaryLight: 'white',
             tertiary: 'black',   
             tertiaryLight: 'rgba(0,0,0,.85)'   
         },
@@ -45,7 +45,7 @@ const Theme = ( { children, color } ) => {
             desktop: '(min-width: 1200px)'
         }
     }
-    const [colorTheme, setColorTheme] = useState(dark)
+    const [colorTheme, setColorTheme] = useState(light)
 
     useEffect(()=>{
         switch(color) {

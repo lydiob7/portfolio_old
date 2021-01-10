@@ -22,12 +22,21 @@ body {
     margin: 0 auto;
 }
 
+.section-title {
+        text-align: center;
+        color: ${props=>props.theme.font.color};
+        font-size: 30px;
+        text-transform: uppercase;
+        font-weight: bold;
+}
+
 .ant-dropdown-menu {
     background-color: ${props => props.theme.color.tertiary}!important;
 }
 
 .ant-dropdown-menu-item a {
         color: ${props => props.theme.font.color};
+        text-transform: uppercase;
     }
 
 .ant-menu-item-active,
@@ -36,7 +45,7 @@ body {
 }
 
 .ant-switch-checked {
-    background-color: ${props => props.theme.color.secondary}!important;
+    background-color: black!important;
 }
 .submenu-mobile {
     width: 100vw;

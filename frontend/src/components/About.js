@@ -10,11 +10,6 @@ const AboutStyled = styled.div`
     width: 100vw;
     padding: 120px 0 60px 0;
     background-color: ${props => props.theme.color.main};
-    &>h2 {
-        text-align: center;
-        color: ${props=>props.theme.font.color};
-        font-size: 30px;
-    }
     .container-about {
         display: flex;
         flex-direction: column;
@@ -167,7 +162,7 @@ const About = () => {
     return (
         <AboutStyled id="about">
 
-            <h2>About me</h2>
+            <h2 className="section-title">About me</h2>
 
             <div className="container-about">
                 <div className="photo">

@@ -3,15 +3,9 @@ import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const TechnologiesStyled = styled.div`
-    min-height: 100vh;
     width: 100vw;
     padding: 120px 10vw;
     background-color: ${props => props.theme.color.mainLight};
-    &>h2 {
-        text-align: center;
-        color: ${props=>props.theme.font.color};
-        font-size: 30px;
-    }
     &>div{
         display: flex;
         flex-wrap: wrap;
@@ -63,6 +57,7 @@ const TechnologiesStyled = styled.div`
     }
 
     @media ${props => props.theme.device.tablet} {
+        min-height: 100vh;
         &>div .icon {
             width: 10vw;
         }
@@ -108,7 +103,7 @@ const Technologies = () => {
     return (
         <TechnologiesStyled  id="technologies" ref={$componentTech}>
 
-            <h2>Technologies</h2>
+            <h2 className="section-title">Technologies</h2>
 
             <div>
                 <FontAwesomeIcon icon={["fab", "react"]} style={{opacity: visible1}} className="icon react"/>

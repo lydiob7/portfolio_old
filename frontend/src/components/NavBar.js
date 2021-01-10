@@ -20,6 +20,7 @@ const NavBarStyled = styled.div`
         h2 {
             margin: 0;
             color: ${props => props.theme.font.color};
+            text-transform: uppercase;
             &:hover {
                 color: ${props => props.theme.color.secondary};
             }
@@ -61,6 +62,7 @@ const NavBarStyled = styled.div`
                 margin: 0 10px;
             }
             a {
+                text-transform: uppercase;
                 color: ${props => props.theme.font.color};
             }
         }
