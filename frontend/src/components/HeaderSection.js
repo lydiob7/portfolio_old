@@ -9,8 +9,11 @@ const HeaderStyled = styled.div`
     ${'' /* align-items: center; */}
     height: calc(100vh - 60px);
     margin-top: 60px;
-    background-color: white;
-`
+    background-color: ${props => props.theme.color.mainLight};
+    h1, h2, span {
+        color: white;
+    }
+    `
 
 const HeaderSection = () => {
     return (
