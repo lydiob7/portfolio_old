@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import { Typography, Form, Input, Button, Row, Col } from 'antd'
+import { Typography, Form, Input, Button, Row, Col, Spin } from 'antd'
 import styled from 'styled-components'
 import { contactFn } from '../services/contact'
+import { LoadingOutlined } from '@ant-design/icons';
 
 const ContactStyled = styled.div`
     padding: 50px 0;
@@ -25,10 +26,16 @@ const ContactStyled = styled.div`
         background-color: ${props => props.theme.color.main};
         color: ${props => props.theme.font.color};
         border: 1px solid #383838;
+        span {
+            margin: 0 20px;
+        }
         &:hover {
             background-color: ${props => props.theme.color.secondary};
             color: white;
         }
+    }
+    .ant-btn-primary:hover, .ant-btn-primary:focus {
+            background-color: ${props => props.theme.color.secondary};
     }
     .message-sent {
         height: 425.2px;
@@ -44,10 +51,15 @@ const ContactStyled = styled.div`
 
 const Contact = () => {
     const [ messageSent, setMessageSent ] = useState(null)
+    const [ spinner, setSpinner ] = useState(null)
+    
+    const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />
 
     const onFinish = async(values) => {
+        setSpinner(true)
         await contactFn(values);
         setMessageSent(true)
+        setSpinner(false)
     };
     
     const onFinishFailed = (errorInfo) => {
@@ -99,7 +111,7 @@ const Contact = () => {
 
                         <Form.Item>
                             <Button type="primary" htmlType="submit">
-                            Send message
+                            Send message {spinner && <Spin indicator={antIcon} />}
                             </Button>
                         </Form.Item>
                         </Form>
