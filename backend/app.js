@@ -21,7 +21,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public/build')));
 
 // default value for title local
-app.locals.title = 'Tomas Scattini - Personal Portfolio';
+app.locals.title = 'Tomas Scattini - Portfolio';
 
 app.use(cors({
   origin: ["http://localhost:3000", "https://tomiscattini.herokuapp.com/", "http://tomiscattini.com/", "http://www.tomiscattini.com"],
