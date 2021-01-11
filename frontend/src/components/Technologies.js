@@ -58,13 +58,23 @@ const TechnologiesStyled = styled.div`
 
     @media ${props => props.theme.device.tablet} {
         min-height: 100vh;
-        &>div .icon {
-            width: 10vw;
+        &>div {
+            .icon {
+                width: 10vw;
+            }
+            .mongo {
+                width: 8vh;
+            }
         }
     }
     @media ${props => props.theme.device.laptop} {
-        &>div .icon {
-            width: 7vw;
+        &>div {
+            .icon {
+                width: 7vw;
+            }
+            .mongo {
+                width: 5vw;
+            }
         }
     }
 `
@@ -108,8 +118,8 @@ const Technologies = () => {
             <div>
                 <FontAwesomeIcon icon={["fab", "react"]} style={{opacity: visible1}} className="icon react"/>
                 <FontAwesomeIcon icon={["fab", "node"]} style={{opacity: visible1}} className="icon node"/>
-                <img src="/expressjs.svg" style={{opacity: visible1}} className="icon express" alt="ExpressJs" />
-                <img src="/mongodb.svg" style={{opacity: visible1}} className="icon mongo" alt="MongoDB" />
+                <img src="/expressjs-black.svg" style={{opacity: visible1}} className="icon express" alt="ExpressJs" />
+                <img src="/mongodb.png" style={{opacity: visible1}} className="icon mongo" alt="MongoDB" />
                 <FontAwesomeIcon icon={["fab", "js"]} style={{opacity: visible1}} className="icon js"/>
                 <FontAwesomeIcon icon={["fab", "html5"]} style={{opacity: visible2}} className="icon html"/>
                 <FontAwesomeIcon icon={["fab", "css3"]} style={{opacity: visible2}} className="icon css"/>
