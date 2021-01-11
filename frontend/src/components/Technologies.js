@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const TechnologiesStyled = styled.div`
     width: 100vw;
-    height: 70vh;
     padding: 120px 10vw;
     background-color: ${props => props.theme.color.mainLight};
     &>div{
@@ -57,10 +56,8 @@ const TechnologiesStyled = styled.div`
         }
     }
 
-    @media ${props => props.theme.device.lgPhone} {
-        min-height: 100vh;
-    }
     @media ${props => props.theme.device.tablet} {
+        min-height: 100vh;
         &>div {
             .icon {
                 width: 10vw;
