@@ -31,11 +31,12 @@ const ContactStyled = styled.div`
         }
         &:hover {
             background-color: ${props => props.theme.color.secondary};
-            color: white;
+            color: ${props => props.theme.color.main};
         }
     }
     .ant-btn-primary:hover, .ant-btn-primary:focus {
             background-color: ${props => props.theme.color.secondary};
+            color: ${props => props.theme.color.main};
     }
     .message-sent {
         height: 425.2px;
