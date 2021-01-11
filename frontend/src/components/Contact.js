@@ -45,8 +45,8 @@ const ContactStyled = styled.div`
 const Contact = () => {
     const [ messageSent, setMessageSent ] = useState(null)
 
-    const onFinish = (values) => {
-        contactFn(values);
+    const onFinish = async(values) => {
+        await contactFn(values);
         setMessageSent(true)
     };
     
