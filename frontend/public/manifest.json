@@ -1,6 +1,8 @@
 {
   "short_name": "Tomi Scattini",
   "name": "Tomi Scattini - Portfolio",
+  "image": "https://res.cloudinary.com/tomiscattini/image/upload/v1610311528/Portfolio/IMG_69478_vbwzk5.jpg",
+  "description": "Tomi Scattini's Personal website, Web Developer full stack",
   "icons": [
     {
       "src": "favicon.ico",
