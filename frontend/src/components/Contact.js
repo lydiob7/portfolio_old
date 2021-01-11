@@ -64,7 +64,8 @@ const Contact = () => {
     };
     
     const onFinishFailed = (errorInfo) => {
-        console.log('Failed:', errorInfo);
+        alert('Failed:', errorInfo);
+        setSpinner(false)
         };
 
     return (
