@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, 'public/build')));
 app.locals.title = 'Tomi Scattini - Personal Portfolio';
 
 app.use(cors({
-  origin: ["http://localhost:3000", "https://tomiscattini.herokuapp.com/", "http://tomiscattini.com/", "http://www.tomiscattini.com", "http://www.tomiscattini.com/"],
+  origin: ["http://localhost:3000", "https://tomiscattini.herokuapp.com/", "http://tomiscattini.com/", "http://www.tomiscattini.com", "https://www.tomiscattini.com/", "https://tomiscattini.com"],
   credentials: true
 }))
 
