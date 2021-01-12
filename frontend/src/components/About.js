@@ -166,9 +166,6 @@ const About = () => {
 
             <div className="container-about">
                 <div className="photo">
-                    {/* <div>
-                        <img src="https://res.cloudinary.com/tomiscattini/image/upload/v1609991109/Portfolio/Foto_perfil_vlsfyy.jpg" alt="Profile" />
-                    </div> */}
                     <div className="social">
                         <a  rel="noreferrer" target="_blank" href="https://github.com/Tomasscattini">
                             <FontAwesomeIcon icon={["fab", "github"]} className="icon"/>
