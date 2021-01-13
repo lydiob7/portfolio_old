@@ -23,6 +23,7 @@ const NavBarStyled = styled.div`
             text-transform: uppercase;
             &:hover {
                 color: ${props => props.theme.color.secondary};
+                opacity: .8;
             }
         }
     }
