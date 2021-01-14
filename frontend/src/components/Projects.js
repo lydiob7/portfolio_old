@@ -167,7 +167,7 @@ const Projects = () => {
                     </div>
                 </div>
                 <div className="project">
-                    <a target="_blank" rel="noreferrer" href="https://chapati-delta.herokuapp.com/"><div><img src="chapatilandingpage.png" alt="Chapati Delta" /></div></a>
+                    <a target="_blank" rel="noreferrer" href="#"><div><img src="chapatilandingpage.png" alt="Chapati Delta" /></div></a>
                     <div><h3>Chapati - Delta</h3>
                     <ShowMoreText
                                 lines={1}
@@ -177,7 +177,7 @@ const Projects = () => {
                             ><p>Chapati is a conscious website promoting exchange of experiences and products from a self-sustainable perspective. You will find a virtual space where to offer and find volunteer experiences, as well as to buy and sell craft products. Created with Hbs, NodeJs, Express, MongoDB and Sass (repository on my GitHub)</p></ShowMoreText></div>
                 </div>
                 <div className="project">
-                    <a target="_blank" rel="noreferrer" href="https://musing-swirles-d6448a.netlify.app/"><div><img src="vagamundoslandingpage.png" alt="Vagamundos" /></div></a>
+                    <a target="_blank" rel="noreferrer" href="#"><div><img src="vagamundoslandingpage.png" alt="Vagamundos" /></div></a>
                     <div><h3>Vagamundos</h3>
                     <ShowMoreText
                                 lines={1}
