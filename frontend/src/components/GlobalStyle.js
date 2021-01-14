@@ -44,9 +44,6 @@ body {
     border-color: ${props => props.theme.color.secondary}!important;
 }
 
-.ant-switch-checked {
-    background-color: black!important;
-}
 .submenu-mobile {
     width: 100vw;
     a {
@@ -56,10 +53,22 @@ body {
 
 #switch {
     position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 65px;
     top: 80px;
     z-index: 200;
-    left: calc(50vw - 22px);
+    left: calc(50vw - 30px);
+    svg {
+        color: ${props => props.theme.font.color};
+    }
 }
+
+.ant-switch-checked {
+    background-color: black!important;
+}
+
 @media ${props => props.theme.device.laptop} {
     .container {
         width: 1200px;

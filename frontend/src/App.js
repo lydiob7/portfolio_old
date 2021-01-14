@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import { BrowserRouter as Router } from 'react-router-dom'
 import 'antd/dist/antd.css'
 import { Switch } from 'antd'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 
@@ -39,7 +41,11 @@ function App() {
       <Theme color={colorTheme}>
         <GlobalStyle />
         <NavBar />
-        <Switch id="switch"  onChange={changeTheme} data-toggle="tooltip" data-placement="left" title="Light/Dark"/>
+        <div id="switch">
+          {colorTheme === 'light' ? <FontAwesomeIcon icon={faMoon} className="icon"/> :
+          <FontAwesomeIcon icon={faSun} className="icon"/>}
+          <Switch onChange={changeTheme} data-toggle="tooltip" data-placement="left" title="Light/Dark"/>
+        </div>
         <HeaderSection />
         <About />
         <Technologies />

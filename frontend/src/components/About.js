@@ -32,6 +32,7 @@ const AboutStyled = styled.div`
                     margin: 60px 20px;
                     &:hover {
                         color: ${props => props.theme.color.secondaryLight};
+                        opacity: .8;
                     }
                 }
             }
@@ -44,7 +45,7 @@ const AboutStyled = styled.div`
                     padding: 0 20px;
                     &:hover {
                         background-color: ${props => props.theme.color.secondary};
-                        color: white;
+                        color: ${props => props.theme.color.main};
                     }
                 }
             }
@@ -166,9 +167,6 @@ const About = () => {
 
             <div className="container-about">
                 <div className="photo">
-                    {/* <div>
-                        <img src="https://res.cloudinary.com/tomiscattini/image/upload/v1609991109/Portfolio/Foto_perfil_vlsfyy.jpg" alt="Profile" />
-                    </div> */}
                     <div className="social">
                         <a  rel="noreferrer" target="_blank" href="https://github.com/Tomasscattini">
                             <FontAwesomeIcon icon={["fab", "github"]} className="icon"/>
