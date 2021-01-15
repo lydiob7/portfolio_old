@@ -33,6 +33,17 @@ const ContactStyled = styled.div`
             background-color: ${props => props.theme.color.secondary};
             color: ${props => props.theme.color.main};
         }
+        &:disabled,
+        &[disabled] {
+            background-color: gray;
+            opacity: .8;
+        }
+        .ant-spin {
+            color: ${props => props.theme.font.color};
+            .anticon {
+                font-size: 16px!important;
+            }
+        }
     }
     .ant-btn-primary:hover, .ant-btn-primary:focus {
             background-color: ${props => props.theme.color.secondary};
@@ -53,14 +64,17 @@ const ContactStyled = styled.div`
 const Contact = () => {
     const [ messageSent, setMessageSent ] = useState(null)
     const [ spinner, setSpinner ] = useState(null)
+    const [ btnDisabled, setBtnDisabled ] = useState(false)
     
     const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />
 
     const onFinish = async(values) => {
+        setBtnDisabled(true)
         setSpinner(true)
         await contactFn(values);
         setMessageSent(true)
         setSpinner(false)
+        setBtnDisabled(false)
     };
     
     const onFinishFailed = (errorInfo) => {
@@ -112,7 +126,7 @@ const Contact = () => {
                         </Form.Item>
 
                         <Form.Item>
-                            <Button type="primary" htmlType="submit">
+                            <Button disabled={btnDisabled} type="primary" htmlType="submit">
                             Send message {spinner && <Spin indicator={antIcon} />}
                             </Button>
                         </Form.Item>
