@@ -36,10 +36,13 @@ const FooterStyled = styled.div`
 `
 
 const Footer = () => {
+    const d = new Date()
+    const year = d.getFullYear()
+
     return (
         <FooterStyled>
             <div>
-                <p>&copy; All rights reserved by Tomas Scattini</p>
+                <p>&copy; All rights reserved by Tomas Scattini {year}</p>
             </div>
 
             <div className="social">
