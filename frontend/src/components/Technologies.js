@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
+import { useContextInfo } from '../hooks/languageContext'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -84,6 +85,8 @@ const Technologies = () => {
     const [ visible2, setVisible2 ] = useState('0')
     const $componentTech = useRef()
 
+    const { languageCtx } = useContextInfo()
+
     useEffect(() => {
         if (typeof window !== "undefined") {
             window.onscroll = () => {
@@ -113,7 +116,7 @@ const Technologies = () => {
     return (
         <TechnologiesStyled  id="technologies" ref={$componentTech}>
 
-            <h2 className="section-title">Technologies</h2>
+            <h2 className="section-title">{languageCtx.titles.technologies}</h2>
 
             <div>
                 <FontAwesomeIcon icon={["fab", "react"]} style={{opacity: visible1}} className="icon react"/>

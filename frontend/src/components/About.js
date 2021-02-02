@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react'
+import { useContextInfo } from '../hooks/languageContext'
 import Typewriter from 'typewriter-effect';
 import styled from 'styled-components'
 import { Button, Menu } from 'antd'
@@ -130,17 +131,26 @@ const About = () => {
     const [ start, setStart ] = useState(null)
     const $typewriter = useRef()
 
+    const { languageCtx } = useContextInfo()
+
     useEffect(() => {
         if(language) setStart(true)
     }, [language])
 
-    const txt1 = `Tomas Scattini`
-    const txt2 = `I am a web developer from Argentina with a background in Popular Music and a nomad soul.`
-    const txt3 = `I recently graduated from an intensive bootcamp where I improved my developer skills and reinforced my social network.`
-    const txt4 = `I love to put my creativity to test and that's why I deeply enjoy creating new products for the web.`
-    const txt5 = `I have worked as a Music teacher in my home country for five years until my urge of adventure made me decide to hit the road and travel around the world.`
-    const txt6 = `That experience made me discover a whole new universe and expanded my perception of life.`
-    const txt7 = `Today I decide to make a positive change in the world wherever I can, and that is mostly through this powerful tool that is the internet.`
+    useEffect(() => {
+        if(language) {
+            setLanguage(null)
+            setLanguage('js')
+        }
+    })
+
+    const txt1 = `Tomás Scattini`
+    const txt2 = languageCtx.bio.txt2
+    const txt3 = languageCtx.bio.txt3
+    const txt4 = languageCtx.bio.txt4
+    const txt5 = languageCtx.bio.txt5
+    const txt6 = languageCtx.bio.txt6
+    const txt7 = languageCtx.bio.txt7
     const txtLkdn = `linkedin.com/in/tomas-scattini/`
     const txtGthb = `github.com/Tomasscattini`
 
@@ -163,7 +173,7 @@ const About = () => {
     return (
         <AboutStyled id="about">
 
-            <h2 className="section-title">About me</h2>
+            <h2 className="section-title">{languageCtx.titles.about}</h2>
 
             <div className="container-about">
                 <div className="photo">
@@ -176,7 +186,7 @@ const About = () => {
                         </a>
                     </div>
                     <div className="resume">
-                        <a href="/resume.pdf" download="Resume Tomas Scattini"><Button primary>Download Resume</Button></a>
+                        <a href="/resume.pdf" download="Resume Tomas Scattini"><Button primary>{languageCtx.content.download}</Button></a>
                     </div>
                 </div>
 

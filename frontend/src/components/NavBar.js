@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useState} from 'react'
+import { useContextInfo } from '../hooks/languageContext'
 import { Typography, Menu, Dropdown } from 'antd'
 import styled from 'styled-components'
 import { HashLink } from 'react-router-hash-link'
@@ -47,6 +48,12 @@ const NavBarStyled = styled.div`
     #menu-lg {
         display: none;
     }
+    #languages {
+        color: ${props => props.theme.font.color};
+        span:hover {
+            opacity: .6;
+        }
+    }
     @media (min-width: 850px) {
         #menu-mobile {
             div {
@@ -60,7 +67,7 @@ const NavBarStyled = styled.div`
                 border-bottom: none;
             }
             .ant-menu-item {
-                margin: 0 10px;
+                margin: 0 5px;
             }
             a {
                 text-transform: uppercase;
@@ -71,13 +78,16 @@ const NavBarStyled = styled.div`
     @media ${props => props.theme.device.laptop} {
         #menu-lg {
             .ant-menu-item {
-                margin: 0 20px;
+                margin: 0 15px;
             }
         }
     }
 `
 
 const NavBar = () => {
+    const [language, setLanguage] = useState('english')
+
+    const { languageCtx, changeLanguage } = useContextInfo()
 
     const scrollTop = () => {
         window.scroll({
@@ -89,19 +99,31 @@ const NavBar = () => {
     const menu = (layout) => (
     <Menu mode={layout}>
         <Menu.Item>
-            <HashLink onClick={scrollTop}>Home</HashLink>
+            <HashLink onClick={scrollTop}>{languageCtx.menu.home}</HashLink>
         </Menu.Item>
         <Menu.Item>
-            <HashLink to='/#about'>About</HashLink>
+            <HashLink to='/#about'>{languageCtx.menu.about}</HashLink>
         </Menu.Item>
         <Menu.Item>
-            <HashLink to='/#technologies'>Technologies</HashLink>
+            <HashLink to='/#technologies'>{languageCtx.menu.technologies}</HashLink>
         </Menu.Item>
         <Menu.Item>
-            <HashLink to='/#projects'>Projects</HashLink>
+            <HashLink to='/#projects'>{languageCtx.menu.projects}</HashLink>
         </Menu.Item>
         <Menu.Item>
-            <HashLink to='/#contact'>Contact</HashLink>
+            <HashLink to='/#contact'>{languageCtx.menu.contact}</HashLink>
+        </Menu.Item>
+        <Menu.Item>
+            {language === 'english' ? 
+                <HashLink onClick={() => {
+                    changeLanguage('ES')
+                    setLanguage('spanish')
+                    }}>Español</HashLink> : 
+                <HashLink onClick={() => {
+                    changeLanguage('EN')
+                    setLanguage('english')
+                    }}>English</HashLink>
+            }
         </Menu.Item>
     </Menu>)
 
