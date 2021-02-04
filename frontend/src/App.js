@@ -7,6 +7,7 @@ import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 
+import { useContextInfo } from './hooks/languageContext'
 import GlobalStyle from './components/GlobalStyle'
 import Theme from './components/Theme'
 import About from './components/About'
@@ -21,6 +22,8 @@ library.add(fab)
 
 function App() {
   const [colorTheme, setColorTheme] = useState('light')
+
+  const { languageCtx } = useContextInfo()
 
   const changeTheme = (checked) => {
     switch(colorTheme) {
@@ -44,7 +47,7 @@ function App() {
         <div id="switch">
           {colorTheme === 'light' ? <FontAwesomeIcon icon={faMoon} className="icon"/> :
           <FontAwesomeIcon icon={faSun} className="icon"/>}
-          <Switch onChange={changeTheme} data-toggle="tooltip" data-placement="left" title="Light/Dark"/>
+          <Switch onChange={changeTheme} data-toggle="tooltip" data-placement="left" title={languageCtx.theme}/>
         </div>
         <HeaderSection />
         <About />

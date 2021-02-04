@@ -1,9 +1,10 @@
 import React from 'react'
+import { useContextInfo } from '../hooks/languageContext'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
-const FooterStyled = styled.div`
+const FooterStyled = styled.footer`
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
@@ -16,6 +17,7 @@ const FooterStyled = styled.div`
     padding: 0 10vw;
     p {
         color: ${props => props.theme.font.color};
+        text-align: center;
     }
     .social {
         .icon {
@@ -36,13 +38,15 @@ const FooterStyled = styled.div`
 `
 
 const Footer = () => {
+    const { languageCtx } = useContextInfo()
+
     const d = new Date()
     const year = d.getFullYear()
 
     return (
         <FooterStyled>
             <div>
-                <p>&copy; All rights reserved by Tomas Scattini {year}</p>
+                <p>&copy; {languageCtx.content.copyright} {year}</p>
             </div>
 
             <div className="social">

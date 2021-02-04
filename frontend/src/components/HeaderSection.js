@@ -1,8 +1,9 @@
 import React from 'react'
+import { useContextInfo } from '../hooks/languageContext'
 import styled from 'styled-components'
 import { Typography } from 'antd'
 
-const HeaderStyled = styled.div`
+const HeaderStyled = styled.header`
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -52,12 +53,14 @@ const HeaderStyled = styled.div`
     `
 
 const HeaderSection = () => {
+    const { languageCtx } = useContextInfo()
+
     return (
         <HeaderStyled>
             <img src="https://res.cloudinary.com/tomiscattini/image/upload/v1610311528/Portfolio/IMG_69478_vbwzk5.jpg" alt="Tomi Scattini" />
-            <Typography.Title level={2}>Hello, I am</Typography.Title>
+            <Typography.Title level={2}>{languageCtx.content.hello}</Typography.Title>
             <Typography.Title level={1}>Tomi Scattini</Typography.Title>
-            <Typography.Title level={2}>Web Developer</Typography.Title>
+            <Typography.Title level={2}>{languageCtx.content.profession}</Typography.Title>
         </HeaderStyled>
     )
 }

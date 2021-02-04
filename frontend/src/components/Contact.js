@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
+import { useContextInfo } from '../hooks/languageContext'
 import { Typography, Form, Input, Button, Row, Col, Spin } from 'antd'
 import styled from 'styled-components'
 import { contactFn } from '../services/contact'
 import { LoadingOutlined } from '@ant-design/icons';
 
-const ContactStyled = styled.div`
+const ContactStyled = styled.section`
     padding: 50px 0;
     background-color: ${props => props.theme.color.tertiary};    
     h2, h4 {
@@ -65,6 +66,8 @@ const Contact = () => {
     const [ messageSent, setMessageSent ] = useState(null)
     const [ spinner, setSpinner ] = useState(null)
     const [ btnDisabled, setBtnDisabled ] = useState(false)
+
+    const { languageCtx } = useContextInfo()
     
     const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />
 
@@ -87,7 +90,7 @@ const Contact = () => {
             <Row>
             {!messageSent ?
                 <><Col span={24}>
-                    <Typography.Title className="section-title" level={2} >Get in touch</Typography.Title>
+                    <Typography.Title className="section-title" level={2} >{languageCtx.titles.contact}</Typography.Title>
                 </Col>
 
                 <Col xs={{offset: 2, span: 20}} md={{offset: 4, span: 16}} lg={{offset: 8, span: 8}}>
@@ -104,30 +107,30 @@ const Contact = () => {
                         <Form.Item
                             label="E-mail"
                             name="email"
-                            rules={[{ required: true, message: 'Please input your email!' }, { type: 'email' }]}
+                            rules={[{ required: true, message: languageCtx.form.message1 }, { type: 'email' }]}
                         >
                             <Input />
                         </Form.Item>
 
                         <Form.Item
-                            label="Subject"
+                            label={languageCtx.form.subject}
                             name="subject"
-                            rules={[{ required: true, message: 'Please name your message!' }]}
+                            rules={[{ required: true, message: languageCtx.form.message2 }]}
                         >
                             <Input />
                         </Form.Item>
                         
                         <Form.Item
-                            label="Message"
+                            label={languageCtx.form.message}
                             name="message"
-                            rules={[{ required: true, message: 'Please write your message!' }]}
+                            rules={[{ required: true, message: languageCtx.form.message3 }]}
                         >
                             <Input.TextArea autoSize={{minRows: 4, maxRows: 10}} />
                         </Form.Item>
 
                         <Form.Item>
                             <Button disabled={btnDisabled} type="primary" htmlType="submit">
-                            Send message {spinner && <Spin indicator={antIcon} />}
+                            {languageCtx.form.send} {spinner && <Spin indicator={antIcon} />}
                             </Button>
                         </Form.Item>
                         </Form>
@@ -135,13 +138,13 @@ const Contact = () => {
                 </Col></> : <Col className="message-sent" xs={{offset: 2, span: 20}} md={{offset: 4, span: 16}}>
                     <Row>
                         <Col span={24}>
-                            <Typography.Title level={2}>Thanks for contacting! </Typography.Title>
-                            <Typography.Title level={4}>I'll be getting back to you shortly</Typography.Title>
+                            <Typography.Title level={2}>{languageCtx.form.thanks} </Typography.Title>
+                            <Typography.Title level={4}>{languageCtx.form.thanks2}</Typography.Title>
                         </Col>
                     </Row>
                     <Row>
                         <Col xs={{span: 24}} sm={{offset: 4, span: 16}} lg={{offset: 8, span: 8}}>
-                            <Button onClick={()=> setMessageSent(null)}>Get in touch again!</Button>
+                            <Button onClick={()=> setMessageSent(null)}>{languageCtx.form.sendagain}</Button>
                         </Col>
                     </Row>
                 </Col>}
