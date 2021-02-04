@@ -3,7 +3,7 @@ import { useContextInfo } from '../hooks/languageContext'
 import styled from 'styled-components'
 import { Typography } from 'antd'
 
-const HeaderStyled = styled.div`
+const HeaderStyled = styled.header`
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { Button, Menu } from 'antd'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const AboutStyled = styled.div`
+const AboutStyled = styled.main`
     position: relative;
     min-height: 100vh;
     width: 100vw;
@@ -138,11 +138,9 @@ const About = () => {
     }, [language])
 
     useEffect(() => {
-        if(language) {
-            setLanguage(null)
-            setLanguage('js')
-        }
-    })
+        changeLanguage('ts')
+        changeLanguage('js')
+    }, [languageCtx])
 
     const txt1 = `Tomás Scattini`
     const txt2 = languageCtx.bio.txt2

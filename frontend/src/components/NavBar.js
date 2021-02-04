@@ -4,7 +4,7 @@ import { Typography, Menu, Dropdown } from 'antd'
 import styled from 'styled-components'
 import { HashLink } from 'react-router-hash-link'
 
-const NavBarStyled = styled.div`
+const NavBarStyled = styled.nav`
     position: fixed;
     top: 0;
     display: flex;

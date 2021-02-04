@@ -6,7 +6,7 @@ import ShowMoreText from 'react-show-more-text'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 
-const ProjectsStyled = styled.div`
+const ProjectsStyled = styled.section`
     width: 100vw;
     background-color: ${props => props.theme.color.main};
     padding: 120px 10vw 60px 10vw;

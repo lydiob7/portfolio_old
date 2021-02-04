@@ -78,7 +78,7 @@ export const LanguageContextProvider = props => {
             copyright: 'Todos los derechos reservados por Tomás Scattini'
         },
         bio: {
-            txt2: 'Soy Desarrollador Web Full Stack de Argentina con un background de Música Popular y un alma nómada.',
+            txt2: 'Soy Desarrollador Web Full Stack de Argentina con un background en Música Popular y un alma nómada.',
             txt3: 'Recientemente me gradué de un bootcamp intensivo en donde desarrollé mis habilidades técnicas y reforcé mi red profesional.',
             txt4: "Disfruto de poner a prueba mi creatividad y es por eso que amo crear nuevos productos para la web.",
             txt5: 'Trabajé como profesor de música en mi país natal por cinco años hasta que mis ansias de aventura me hicieron decidir agarrar la mochila y salir a recorrer el mundo.',

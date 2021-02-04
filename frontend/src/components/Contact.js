@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { contactFn } from '../services/contact'
 import { LoadingOutlined } from '@ant-design/icons';
 
-const ContactStyled = styled.div`
+const ContactStyled = styled.section`
     padding: 50px 0;
     background-color: ${props => props.theme.color.tertiary};    
     h2, h4 {
