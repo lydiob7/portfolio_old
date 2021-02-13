@@ -99,7 +99,7 @@ const NavBar = () => {
     const menu = (layout) => (
     <Menu mode={layout}>
         <Menu.Item>
-            <HashLink onClick={scrollTop}>{languageCtx.menu.home}</HashLink>
+            <HashLink to="#" onClick={scrollTop}>{languageCtx.menu.home}</HashLink>
         </Menu.Item>
         <Menu.Item>
             <HashLink to='/#about'>{languageCtx.menu.about}</HashLink>
@@ -115,11 +115,11 @@ const NavBar = () => {
         </Menu.Item>
         <Menu.Item>
             {language === 'english' ? 
-                <HashLink onClick={() => {
+                <HashLink to="" onClick={() => {
                     changeLanguage('ES')
                     setLanguage('spanish')
                     }}>Español</HashLink> : 
-                <HashLink onClick={() => {
+                <HashLink to="" onClick={() => {
                     changeLanguage('EN')
                     setLanguage('english')
                     }}>English</HashLink>

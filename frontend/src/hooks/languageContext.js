@@ -41,6 +41,7 @@ export const LanguageContextProvider = props => {
             chapati: 'Chapati is a conscious website promoting exchange of experiences and products from a self-sustainable perspective. You will find a virtual space where to offer and find volunteer experiences, as well as to buy and sell craft products. Created with Hbs, NodeJs, Express, MongoDB and Sass (repository on my GitHub)',
             bandaespecia: "This is a website for a music group of La Plata, Argentina. You'll find their music, some pictures and their next events! Created on Html, JavaScript, Css and a little of JQuery (repository on my GitHub)"
         },
+        networkError: 'Sorry, you need to be online to contact me!',
         form: {
             subject: 'Subject',
             message: 'Message',
@@ -91,6 +92,7 @@ export const LanguageContextProvider = props => {
             chapati: 'Chapati es una página web consciente que promueve intercambios de experiencias y productos desde una perspectiva autosustentable. Vas a encontrar un espacio en donde ofrecer y buscar experiencias de voluntariado, así como también comprar y vender artesanías. Creado con Hbs, NodeJs, Express, MongoDB y Sass (repositorio en mi GitHub)',
             bandaespecia: "Esta es una página web para una banda de música de La Plata, Argentina. Vas a poder encontrar su música original, algunas fotos del conjunto y sus próximas presentaciones! Creado en Html, JavaScript, Css y un poquito de JQuery (repositorio en mi GitHub)"
         },
+        networkError: 'Perdón, necesitás internet para contactarme!',
         form: {
             subject: 'Asunto',
             message: 'Mensaje',

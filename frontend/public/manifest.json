@@ -1,8 +1,8 @@
 {
   "short_name": "Tomi Scattini",
-  "name": "Tomi Scattini - Portfolio",
+  "name": "Tomi Scattini - Portfolio | Full Stack Web Developer",
   "image": "https://res.cloudinary.com/tomiscattini/image/upload/v1610311528/Portfolio/IMG_69478_vbwzk5.jpg",
-  "description": "Tomi Scattini's Personal website, Web Developer full stack",
+  "description": "Full Stack Web Developer Portfolio. Front-end & Back-end Web Developer. Tech stack include React, JavaScript, Node, MongoDB, HTML5, CSS3, SASS.",
   "icons": [
     {
       "src": "favicon.ico",

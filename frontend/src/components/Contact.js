@@ -95,6 +95,8 @@ const Contact = () => {
 
                 <Col xs={{offset: 2, span: 20}} md={{offset: 4, span: 16}} lg={{offset: 8, span: 8}}>
 
+                {/* <Typography.Title level={3} style={{textAlign: "center"}}>{languageCtx.networkError}</Typography.Title> */}
+
                     <Form
                         name="contact"
                         className="form"

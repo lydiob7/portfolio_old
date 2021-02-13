@@ -28,12 +28,13 @@ const HeaderStyled = styled.header`
         text-transform: uppercase;
         margin: 0;
         z-index: 10;
-    }
-    h2.ant-typography {
-        color: ${props => props.theme.font.color};
-        margin: 0;
-        font-size: 24px;
-        z-index: 10;
+        &>span {
+            display: block;
+            color: ${props => props.theme.font.color};
+            margin: 0;
+            font-size: 24px;
+            z-index: 10;
+        }
     }
     h2.ant-typography:first-of-type {
         width: 100%;
@@ -45,9 +46,9 @@ const HeaderStyled = styled.header`
     }
         h1.ant-typography {
             font-size: 11rem;
-        }
-        h2.ant-typography {
-            font-size: 30px;
+            &>span {
+                font-size: 30px;
+            }
         }
     }
     `
@@ -59,8 +60,7 @@ const HeaderSection = () => {
         <HeaderStyled>
             <img src="https://res.cloudinary.com/tomiscattini/image/upload/v1610311528/Portfolio/IMG_69478_vbwzk5.jpg" alt="Tomi Scattini" />
             <Typography.Title level={2}>{languageCtx.content.hello}</Typography.Title>
-            <Typography.Title level={1}>Tomi Scattini</Typography.Title>
-            <Typography.Title level={2}>{languageCtx.content.profession}</Typography.Title>
+            <Typography.Title level={1}>Tomi Scattini <span>{languageCtx.content.profession}</span></Typography.Title>
         </HeaderStyled>
     )
 }

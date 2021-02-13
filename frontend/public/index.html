@@ -5,12 +5,17 @@ xmlns:fb="http://ogp.me/ns/fb#">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta property="og:title" content="Tomi Scattini - Portfolio"/>
+    <meta property="title" content="Tomi Scattini - Portfolio | Full Stack Web Developer"/>
+    <meta property="og:title" content="Tomi Scattini - Portfolio | Full Stack Web Developer"/>
+    <meta property="image" content="https://res.cloudinary.com/tomiscattini/image/upload/v1610461123/Portfolio/IMG_69478_vbwzk5_2_kr0nir.jpg" />
     <meta property="og:image" content="https://res.cloudinary.com/tomiscattini/image/upload/v1610461123/Portfolio/IMG_69478_vbwzk5_2_kr0nir.jpg" />
+    <meta name="description" content="Full Stack Web Developer Portfolio. Front-end & Back-end Web Developer. Tech stack include React, JavaScript, Node, MongoDB, HTML5, CSS3, SASS.">
     <meta
       property="og:description"
-      content="Personal portfolio of Tomi Scatini - Web Developer Full Stack"
+      content="Full Stack Web Developer Portfolio. Front-end & Back-end Web Developer. Tech stack include React, JavaScript, Node, MongoDB, HTML5, CSS3, SASS."
     />
+    <meta name="keywords" content="full stack web developer, coding, javascript, web designer, remote" />
+    <link rel="canonical" href="https://www.tomiscattini.com/">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" type="image/x-icon">
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -24,6 +29,17 @@ xmlns:fb="http://ogp.me/ns/fb#">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     
+    <script>
+      if('serviceWorker' in navigator ) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./serviceworker.js')
+          .then((reg) => {
+            console.log("Registration succesful: ", reg.scope);
+          })
+          .catch((err) => console.log("Failure", err));
+        });
+      };
+    </script>
     
   </body>
 </html>
