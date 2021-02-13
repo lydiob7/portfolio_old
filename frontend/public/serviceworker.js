@@ -1,33 +1,27 @@
-const CACHE_NAME = 'version-1';
-const urlsToCache = ['index.html', 'offline.html'];
-
+const cacheName = 'version-1';
 const self = this;
 
 self.addEventListener('install', (event) => {
-    event.waitUntil(
-        caches.open(CACHE_NAME)
-            .then((cache) => {
-                console.log(cache);
-                return cache.addAll(urlsToCache);
-            })
-            .catch(err => console.log('Error: ', err))
-    );
+    console.log('Installing Service Worker');
 });
 
 self.addEventListener('fetch', (event) => {
     event.respondWith(
-        caches.match(event.request)
-            .then(() => {
-                return fetch(event.request)
-                    .catch(() => caches.match('offline.html'))
-            })
-            .catch(err => console.log('Error: ', err))
+        fetch(event.request)
+            .then(res => {
+                const resClone = res.clone();
+                caches.open(cacheName)
+                    .then(cache => {
+                        cache.put(event.request, resClone)
+                    });
+                return res;
+            }).catch(err => caches.match(event.request).then(res => res))
     );
 });
 
 self.addEventListener('activate', (event) => {
     const cacheWhitelist = [];
-    cacheWhitelist.push(CACHE_NAME);
+    cacheWhitelist.push(cacheName);
 
     event.waitUntil(
         caches.keys()
