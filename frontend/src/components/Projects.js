@@ -159,7 +159,7 @@ const Projects = () => {
 
             <div className="carousel carouselSm">
                 <div className="project">
-                    <a target="_blank" rel="noreferrer" href="https://tierra-roja.herokuapp.com/"><div><img src="tierrarojalandingpage.png" alt="Tierra Roja - Mujeres del barro" /></div></a>
+                    <a target="_blank" rel="noreferrer" href="https://tierra-roja.herokuapp.com/"><div><img src="tierrarojalandingpage.jpg" alt="Tierra Roja - Mujeres del barro" /></div></a>
                     <div><h3>Tierra Roja</h3>
                     <ShowMoreText
                                 lines={1}
@@ -170,7 +170,7 @@ const Projects = () => {
                     </div>
                 </div>
                 <div className="project">
-                    <a href="#"><div><img src="chapatilandingpage.png" alt="Chapati Delta" /></div></a>
+                    <a href="#"><div><img src="chapatilandingpage.jpg" alt="Chapati Delta" /></div></a>
                     <div><h3>Chapati - Delta</h3>
                     <ShowMoreText
                                 lines={1}
@@ -180,7 +180,7 @@ const Projects = () => {
                             ><p>{languageCtx.projects.chapati}</p></ShowMoreText></div>
                 </div>
                 <div className="project">
-                    <a href="#"><div><img src="vagamundoslandingpage.png" alt="Vagamundos" /></div></a>
+                    <a href="#"><div><img src="vagamundoslandingpage.jpg" alt="Vagamundos" /></div></a>
                     <div><h3>Vagamundos</h3>
                     <ShowMoreText
                                 lines={1}
@@ -190,7 +190,7 @@ const Projects = () => {
                             ><p>{languageCtx.projects.vagamundos}</p></ShowMoreText></div>
                 </div>
                 <div className="project">
-                    <a target="_blank" rel="noreferrer" href="https://compassionate-feynman-920d93.netlify.app/"><div><img src="bandaespecialandingpage.png" alt="Banda Especia" /></div></a>
+                    <a target="_blank" rel="noreferrer" href="https://compassionate-feynman-920d93.netlify.app/"><div><img src="bandaespecialandingpage.jpg" alt="Banda Especia" /></div></a>
                     <div><h3>Banda Especia</h3>
                     <ShowMoreText
                                 lines={1}
@@ -203,16 +203,16 @@ const Projects = () => {
 
             <Carousel ref={$carousel} dots={false} className="carousel carouselLg">
                 <div className="project">
-                    <a target="_blank" rel="noreferrer" href="https://tierra-roja.herokuapp.com/"><div><div><h3>Tierra Roja</h3><p>{languageCtx.projects.tierraroja}</p></div><img src="tierrarojalandingpage.png" alt="Tierra Roja - Mujeres del barro" /></div></a>
+                    <a target="_blank" rel="noreferrer" href="https://tierra-roja.herokuapp.com/"><div><div><h3>Tierra Roja</h3><p>{languageCtx.projects.tierraroja}</p></div><img src="tierrarojalandingpage.jpg" alt="Tierra Roja - Mujeres del barro" /></div></a>
                 </div>
                 <div className="project">
-                    <a target="_blank" rel="noreferrer" href="https://chapati-delta.herokuapp.com/"><div><div><h3>Chapati - Delta</h3><p>{languageCtx.projects.chapati}</p></div><img src="chapatilandingpage.png" alt="Chapati Delta" /></div></a>
+                    <a target="_blank" rel="noreferrer" href="https://chapati-delta.herokuapp.com/"><div><div><h3>Chapati - Delta</h3><p>{languageCtx.projects.chapati}</p></div><img src="chapatilandingpage.jpg" alt="Chapati Delta" /></div></a>
                 </div>
                 <div className="project">
-                    <a target="_blank" rel="noreferrer" href="https://musing-swirles-d6448a.netlify.app/"><div><div><h3>Vagamundos</h3><p>{languageCtx.projects.vagamundos}</p></div><img src="vagamundoslandingpage.png" alt="Vagamundos" /></div></a>
+                    <a target="_blank" rel="noreferrer" href="https://musing-swirles-d6448a.netlify.app/"><div><div><h3>Vagamundos</h3><p>{languageCtx.projects.vagamundos}</p></div><img src="vagamundoslandingpage.jpg" alt="Vagamundos" /></div></a>
                 </div>
                 <div className="project">
-                    <a target="_blank" rel="noreferrer" href="https://compassionate-feynman-920d93.netlify.app/"><div><div><h3>Banda Especia</h3><p>{languageCtx.projects.bandaespecia}</p></div><img src="bandaespecialandingpage.png" alt="Banda Especia" /></div></a>
+                    <a target="_blank" rel="noreferrer" href="https://compassionate-feynman-920d93.netlify.app/"><div><div><h3>Banda Especia</h3><p>{languageCtx.projects.bandaespecia}</p></div><img src="bandaespecialandingpage.jpg" alt="Banda Especia" /></div></a>
                 </div>
             </Carousel>
             

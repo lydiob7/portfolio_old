@@ -39,6 +39,7 @@ const HeaderStyled = styled.header`
     h2.ant-typography:first-of-type {
         width: 100%;
         text-align: center;
+        color: ${props => props.theme.font.color};
     }
     @media ${props => props.theme.device.laptop} {
         &>img {
@@ -58,7 +59,7 @@ const HeaderSection = () => {
 
     return (
         <HeaderStyled>
-            <img src="https://res.cloudinary.com/tomiscattini/image/upload/v1610311528/Portfolio/IMG_69478_vbwzk5.jpg" alt="Tomi Scattini" />
+            <img src="https://res.cloudinary.com/tomiscattini/image/upload/v1610380448/Portfolio/IMG_69478_vbwzk5_1_v7phz5.jpg" alt="Tomi Scattini" />
             <Typography.Title level={2}>{languageCtx.content.hello}</Typography.Title>
             <Typography.Title level={1}>Tomi Scattini <span>{languageCtx.content.profession}</span></Typography.Title>
         </HeaderStyled>
