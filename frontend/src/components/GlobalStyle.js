@@ -11,6 +11,9 @@ body {
     overflow-x: hidden;
     font-family: ${props => props.theme.font.primary};
     width: 100vw;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
     -ms-overflow-style: none;
     scrollbar-width: none;
     &::-webkit-scrollbar {
@@ -34,7 +37,7 @@ body {
     background-color: ${props => props.theme.color.tertiary}!important;
 }
 
-.ant-dropdown-menu-item a {
+.ant-dropdown-menu-item a, .ant-dropdown-menu-item p {
         color: ${props => props.theme.font.color};
         text-transform: uppercase;
     }
@@ -46,7 +49,7 @@ body {
 
 .submenu-mobile {
     width: 100vw;
-    a {
+    a, p {
         text-align: center;
     }
 }

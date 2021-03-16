@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect } from 'react'
 import { useContextInfo } from '../hooks/languageContext'
 import { Typography, Menu, Dropdown } from 'antd'
 import styled from 'styled-components'
@@ -69,7 +69,7 @@ const NavBarStyled = styled.nav`
             .ant-menu-item {
                 margin: 0 5px;
             }
-            a {
+            a, p {
                 text-transform: uppercase;
                 color: ${props => props.theme.font.color};
             }
@@ -77,7 +77,7 @@ const NavBarStyled = styled.nav`
     }
     @media ${props => props.theme.device.laptop} {
         #menu-lg {
-            .ant-menu-item {
+            .ant-menu-item, p {
                 margin: 0 15px;
             }
         }
@@ -86,6 +86,7 @@ const NavBarStyled = styled.nav`
 
 const NavBar = () => {
     const [language, setLanguage] = useState('english')
+    const [ deferredPrompt, setDeferredPrompt ] = useState(null)
 
     const { languageCtx, changeLanguage } = useContextInfo()
 
@@ -93,13 +94,40 @@ const NavBar = () => {
         window.scroll({
             top: 0,
             behavior: 'smooth'
-          });
+        });
     }
+
+    useEffect(() => {
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            setDeferredPrompt(e);
+        });
+        return () => {
+            window.removeEventListener('beforeinstallprompt', () => {});
+        };
+    });
+    
+    useEffect(() => {
+        window.addEventListener('appinstalled', ()=> {
+            setDeferredPrompt(null);
+        });
+        return () => {
+            window.removeEventListener('appinstalled', () => {});
+        };
+    });
+
+
+    const install = () => {
+        deferredPrompt.prompt().then(async() => {
+            const { outcome } = await deferredPrompt.userChoice;
+            deferredPrompt = null;
+        })
+    };
 
     const menu = (layout) => (
     <Menu mode={layout}>
         <Menu.Item>
-            <HashLink to="#" onClick={scrollTop}>{languageCtx.menu.home}</HashLink>
+            <HashLink to="#top">{languageCtx.menu.home}</HashLink>
         </Menu.Item>
         <Menu.Item>
             <HashLink to='/#about'>{languageCtx.menu.about}</HashLink>
@@ -113,16 +141,19 @@ const NavBar = () => {
         <Menu.Item>
             <HashLink to='/#contact'>{languageCtx.menu.contact}</HashLink>
         </Menu.Item>
+        {deferredPrompt && <Menu.Item>
+            <p onClick={install}>{languageCtx.menu.install}</p>
+        </Menu.Item>}
         <Menu.Item>
             {language === 'english' ? 
-                <HashLink to="" onClick={() => {
+                <p onClick={() => {
                     changeLanguage('ES')
                     setLanguage('spanish')
-                    }}>Español</HashLink> : 
-                <HashLink to="" onClick={() => {
+                    }}>Español</p> : 
+                <p onClick={() => {
                     changeLanguage('EN')
                     setLanguage('english')
-                    }}>English</HashLink>
+                    }}>English</p>
             }
         </Menu.Item>
     </Menu>)

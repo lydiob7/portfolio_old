@@ -10,7 +10,8 @@ export const LanguageContextProvider = props => {
             about: 'About',
             technologies: 'Technologies',
             projects: 'Projects',
-            contact: 'Contact'
+            contact: 'Contact',
+            install: 'Install'
         },
         theme: 'light/dark',
         titles: {
@@ -46,6 +47,7 @@ export const LanguageContextProvider = props => {
             subject: 'Subject',
             message: 'Message',
             send: 'Send message',
+            sending: 'Sending',
             thanks: 'Thanks for contacting!',
             thanks2: "I'll be getting back to you shortly",
             sendagain: 'Get in touch again!',
@@ -61,7 +63,8 @@ export const LanguageContextProvider = props => {
             about: 'Sobre mi',
             technologies: 'Tecnologías',
             projects: 'Proyectos',
-            contact: 'Contacto'
+            contact: 'Contacto',
+            install: 'Instalar'
         },
         theme: 'claro/oscuro',
         titles: {
@@ -97,6 +100,7 @@ export const LanguageContextProvider = props => {
             subject: 'Asunto',
             message: 'Mensaje',
             send: 'Enviar mensaje',
+            sending: 'Enviando',
             thanks: 'Gracias por contactarte!',
             thanks2: 'Te estaré respondiendo a la brevedad',
             sendagain: 'Contactar de nuevo!',

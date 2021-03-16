@@ -23,6 +23,7 @@ const ContactStyled = styled.section`
         }
     }
     button {
+        position: relative;
         width: 100%;
         background-color: ${props => props.theme.color.main};
         color: ${props => props.theme.font.color};
@@ -37,10 +38,14 @@ const ContactStyled = styled.section`
         &:disabled,
         &[disabled] {
             background-color: gray;
+            color: white;
             opacity: .8;
         }
         .ant-spin {
             color: ${props => props.theme.font.color};
+            position: absolute;
+            left: calc(50% - 25px);
+            z-index: 3;
             .anticon {
                 font-size: 16px!important;
             }
@@ -132,7 +137,7 @@ const Contact = () => {
 
                         <Form.Item>
                             <Button disabled={btnDisabled} type="primary" htmlType="submit">
-                            {languageCtx.form.send} {spinner && <Spin indicator={antIcon} />}
+                            {spinner ? <>{languageCtx.form.sending} <Spin indicator={antIcon} /></> : languageCtx.form.send }
                             </Button>
                         </Form.Item>
                         </Form>

@@ -14,6 +14,8 @@ xmlns:fb="http://ogp.me/ns/fb#">
     <meta property="type" content="website"/>
     <meta property="title" content="Tomi Scattini - Portfolio | Full Stack Web Developer"/>
     <meta property="og:title" content="Tomi Scattini - Portfolio | Full Stack Web Developer"/>
+    <meta name="apple-mobile-web-app-title" content="Tomi Scattini">
+    <link rel="apple-touch-startup-image" href="https://res.cloudinary.com/tomiscattini/image/upload/v1610461123/Portfolio/IMG_69478_vbwzk5_2_kr0nir.jpg">
     <meta property="image" content="https://res.cloudinary.com/tomiscattini/image/upload/v1610461123/Portfolio/IMG_69478_vbwzk5_2_kr0nir.jpg" />
     <meta property="og:image" content="https://res.cloudinary.com/tomiscattini/image/upload/v1610461123/Portfolio/IMG_69478_vbwzk5_2_kr0nir.jpg" />
     <meta name="description" content="Full Stack Web Developer Portfolio. Front-end & Back-end Web Developer. Tech stack include React, JavaScript, Node, MongoDB, HTML5, CSS3, SASS." />
@@ -37,7 +39,7 @@ xmlns:fb="http://ogp.me/ns/fb#">
     <script>
       if('serviceWorker' in navigator ) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('./serviceworker.js')
+          navigator.serviceWorker.register('/serviceworker.js')
           .then((reg) => {
             console.log("Registration succesful: ", reg.scope);
           })

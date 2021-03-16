@@ -12,8 +12,10 @@ self.addEventListener('fetch', (event) => {
                 const resClone = res.clone();
                 caches.open(cacheName)
                     .then(cache => {
-                        cache.put(event.request, resClone)
-                    });
+                        if(!(event.request.url.indexOf('http') === 0)) return;
+                        cache.put(event.request, resClone);
+                    })
+                    .catch(err => console.log('Error: ', err))
                 return res;
             }).catch(err => caches.match(event.request).then(res => res))
     );
