@@ -1,0 +1,88 @@
+{
+    "menu": {
+        "home": "Inicio",
+        "about": "Sobre mi",
+        "technologies": "Tecnologías",
+        "projects": "Proyectos",
+        "contact": "Contacto",
+        "install": "Instalar"
+    },
+    "theme": "claro/oscuro",
+    "titles": {
+        "about": "Sobre mí",
+        "technologies": "Tecnologías",
+        "projects": "Proyectos",
+        "contact": "Contactame"
+    },
+    "content": {
+        "hello": "Hola, yo soy",
+        "profession": "Desarrollador Web",
+        "download": "Descargar CV",
+        "more": "Leer más",
+        "less": "Ocultar",
+        "copyright": "Todos los derechos reservados por Tomás Scattini"
+    },
+    "bio": {
+        "txt2": "Soy Desarrollador Web Full Stack de Argentina con un background en Música Popular y un alma nómada.",
+        "txt3": "Recientemente me gradué de un bootcamp intensivo en donde desarrollé mis habilidades técnicas y reforcé mi red profesional.",
+        "txt4": "Disfruto de poner a prueba mi creatividad y es por eso que amo crear nuevos productos para la web.",
+        "txt5": "Trabajé como profesor de música en mi país natal por cinco años hasta que mis ansias de aventura me hicieron decidir agarrar la mochila y salir a recorrer el mundo.",
+        "txt6": "Esa experiencia me hizo descubrir un universo nuevo y expandió mi percepción de la vida.",
+        "txt7": "Hoy decido generar un impacto positivo en el mundo en donde pueda y eso, en este momento de mi vida, es a través de esta poderosa herramienta que es la internet."
+    },
+    "projects": [
+        {
+            "name": "Tierra Roja - Mujeres del barro",
+            "description": "Página web de las artistas de la cerámica de Misiones, Argentina. En esta app, las artistas puede ofrecer sus productos y cursos a cualquier persona con una cuenta. Creada con ReactJs, NodeJs, Express, MongoDB y un poquito de magia de AntD y Styled Components (repositorio en mi GitHub)",
+            "link": "https://tierra-roja.herokuapp.com/",
+            "responsive": true,
+            "active": true,
+            "img": "images/tierrarojalandingpage.jpg"
+        },
+        {
+            "name": "Vagamundos",
+            "description": "Vagamundos es un juego interactivo en donde podés viajar por el continente americano con el personaje de tu elección adivinando las capitales. El juego se divide en tres niveles cada vez más difíciles. Disfruta del mundo mientras aprendés geografía! Creado integramente en JavaScript simple, Html y Css (repositorio en mi GitHub)",
+            "link": "https://musing-swirles-d6448a.netlify.app/",
+            "responsive": false,
+            "active": true,
+            "img": "images/vagamundoslandingpage.jpg"
+        },
+        {
+            "name": "Gabi - Portfolio",
+            "description": "Gabi Polanco es diseñadora UX/UI (la diseñadora de casi todos mis proyectos incluso esta página en donde estás navegando ahora 😁). Este es su portfolio personal. La página está creada sobre React con efectos de gsap y el plugin ScrollTrigger.",
+            "link": "https://gabrielapolancoferreyra.com/",
+            "responsive": true,
+            "active": true,
+            "img": "images/gabilandingpage.jpg"
+        },
+        {
+            "name": "Chapati Delta",
+            "description": "Chapati es una página web consciente que promueve intercambios de experiencias y productos desde una perspectiva autosustentable. Vas a encontrar un espacio en donde ofrecer y buscar experiencias de voluntariado, así como también comprar y vender artesanías. Creado con Hbs, NodeJs, Express, MongoDB y Sass (repositorio en mi GitHub)",
+            "link": "https://chapati-delta.herokuapp.com/",
+            "responsive": false,
+            "active": false,
+            "img": "images/chapatilandingpage.jpg"
+        },
+        {
+            "name": "Banda Especia",
+            "description": "Esta es una página web para una banda de música de La Plata, Argentina. Vas a poder encontrar su música original, algunas fotos del conjunto y sus próximas presentaciones! Creado en Html, JavaScript, Css y un poquito de JQuery (repositorio en mi GitHub)",
+            "link": "https://compassionate-feynman-920d93.netlify.app/",
+            "responsive": true,
+            "active": true,
+            "img": "images/bandaespecialandingpage.jpg"
+        }
+    ],
+    "networkError": "Perdón, necesitás internet para contactarme!",
+    "form": {
+        "subject": "Asunto",
+        "message": "Mensaje",
+        "send": "Enviar mensaje",
+        "sending": "Enviando",
+        "thanks": "Gracias por contactarte!",
+        "thanks2": "Te estaré respondiendo a la brevedad",
+        "sendagain": "Contactar de nuevo!",
+        "message1": "Por favor ingresá tu casilla de correo!",
+        "message2": "Por favor poné un asunto al mensaje!",
+        "message3": "Por favor escribí tu mensaje!"
+    }
+}

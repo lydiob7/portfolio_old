@@ -1,0 +1,88 @@
+{
+    "menu": {
+        "home": "Home",
+        "about": "About",
+        "technologies": "Technologies",
+        "projects": "Projects",
+        "contact": "Contact",
+        "install": "Install"
+    },
+    "theme": "light/dark",
+    "titles": {
+        "about": "About me",
+        "technologies": "Technologies",
+        "projects": "Projects",
+        "contact": "Get in touch"
+    },
+    "content": {
+        "hello": "Hello, I am",
+        "profession": "Web Developer",
+        "download": "Download Resume",
+        "more": "Read more",
+        "less": "Hide",
+        "copyright": "All rights reserved by Tomás Scattini"
+    },
+    "bio": {
+        "txt2": "I am a full stack web developer from Argentina with a background in Popular Music and a nomad soul.",
+        "txt3": "I recently graduated from an intensive bootcamp where I improved my developer skills and reinforced my social network.",
+        "txt4": "I love to put my creativity to test and that's why I deeply enjoy creating new products for the web.",
+        "txt5": "I have worked as a Music teacher in my home country for five years until my urge of adventure made me decide to hit the road and travel around the world.",
+        "txt6": "That experience made me discover a whole new universe and expanded my perception of life.",
+        "txt7": "Today I decide to make a positive change in the world wherever I can, and that is mostly through this powerful tool that is the internet."
+    },
+    "projects": [
+        {
+            "name": "Tierra Roja - Mujeres del barro",
+            "description": "Website for the women clay artists of Misiones, Argentina. In this app, the artists can offer their products and courses to any person with an account. Created with ReactJs, NodeJs, Express, MongoDB and a little magic of AntD and Styled Components (repository on my GitHub)",
+            "link": "https://tierra-roja.herokuapp.com/",
+            "responsive": true,
+            "active": true,
+            "img": "images/tierrarojalandingpage.jpg"
+        },
+        {
+            "name": "Gabi - Portfolio",
+            "description": "Gabi Polanco is a UX/UI designer (the designer of almost every one of my projects including this website you are right now 😁). This is her personal portfolio. The website is built on React with animations of gsap and the plugin ScrollTrigger.",
+            "link": "https://gabrielapolancoferreyra.com/",
+            "responsive": true,
+            "active": true,
+            "img": "images/gabilandingpage.jpg"
+        },
+        {
+            "name": "Vagamundos",
+            "description": "Vagamundos is an interactive game where you can travel the continent with the character of your choosing guessing all the capitals. The game is divided in three levels increasing the difficulty of the tests. Enjoy the world while learning geography! Created fully on plain JavaScript, Html and Css (repository on my GitHub)",
+            "link": "https://musing-swirles-d6448a.netlify.app/",
+            "responsive": false,
+            "active": true,
+            "img": "images/vagamundoslandingpage.jpg"
+        },
+        {
+            "name": "Chapati Delta",
+            "description": "Chapati is a conscious website promoting exchange of experiences and products from a self-sustainable perspective. You will find a virtual space where to offer and find volunteer experiences, as well as to buy and sell craft products. Created with Hbs, NodeJs, Express, MongoDB and Sass (repository on my GitHub)",
+            "link": "https://chapati-delta.herokuapp.com/",
+            "responsive": false,
+            "active": false,
+            "img": "images/chapatilandingpage.jpg"
+        },
+        {
+            "name": "Banda Especia",
+            "description": "This is a website for a music group of La Plata, Argentina. You'll find their music, some pictures and their next events! Created on Html, JavaScript, Css and a little of JQuery (repository on my GitHub)",
+            "link": "https://compassionate-feynman-920d93.netlify.app/",
+            "responsive": true,
+            "active": true,
+            "img": "images/bandaespecialandingpage.jpg"
+        }
+    ],
+    "networkError": "Sorry, you need to be online to contact me!",
+    "form": {
+        "subject": "Subject",
+        "message": "Message",
+        "send": "Send message",
+        "sending": "Sending",
+        "thanks": "Thanks for contacting!",
+        "thanks2": "I'll be getting back to you shortly",
+        "sendagain": "Get in touch again!",
+        "message1": "Please input your email!",
+        "message2": "Please name your message!",
+        "message3": "Please write your message!"
+    }
+}

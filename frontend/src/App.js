@@ -26,17 +26,12 @@ function App() {
   const { languageCtx } = useContextInfo()
 
   const changeTheme = (checked) => {
-    switch(colorTheme) {
-      case 'dark':
-        setColorTheme('light')
-        break
-      case 'light':
-        setColorTheme('dark')
-        break
-      default: 
-        break
-    }
-    
+    const options = {
+      light: () => setColorTheme('dark'),
+      dark: () => setColorTheme('light')
+    };
+    const set = options[colorTheme];
+    set();
   }
 
   return (
