@@ -5,9 +5,22 @@ export const TechnologiesStyled = styled.section`
     padding: 120px 10vw;
     background-color: ${(props) => props.theme.color.mainLight};
     & > div {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        margin-top: 10vh;
+        @media ${(props) => props.theme.device.lgPhone} {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @media ${(props) => props.theme.device.tablet} {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        @media ${(props) => props.theme.device.laptop} {
+            grid-template-columns: repeat(5, 1fr);
+        }
+        @media ${(props) => props.theme.device.desktop} {
+            grid-template-columns: repeat(6, 1fr);
+        }
         img {
             object-fit: scale-down;
         }
@@ -36,6 +49,12 @@ export const TechnologiesStyled = styled.section`
             color: #e8d44d;
             transition: all 0.5s ease-in-out;
         }
+        .ts {
+            transition: all 1s ease-in-out;
+        }
+        .redux {
+            transition: all 0.7s ease-in-out;
+        }
         .html {
             color: #dd4b25;
             transition: all 0.9s ease-in-out;
@@ -51,6 +70,10 @@ export const TechnologiesStyled = styled.section`
         .github {
             color: #000;
             transition: all 0.5s ease-in-out;
+        }
+        .wordpress {
+            color: #00749a;
+            transition: all 0.8s ease-in-out;
         }
     }
 
